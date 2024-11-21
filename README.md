@@ -6,7 +6,7 @@
 La société comprend actuellement 183 personnes réparties dans 10 services (appelés "départements").
 Des personnels extérieurs travaillent ponctuellement ou à temps plein avec certains services.
 
-Nous faisons parti de la société Ekoloclast et notre formateur/formatrice joue le rôle du DSI de cette société.
+Nous faisons parti de la société Ekoloclast et notre formateur joue le rôle du DSI de cette société.
 
 ---
 
