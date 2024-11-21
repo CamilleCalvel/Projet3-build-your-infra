@@ -20,7 +20,7 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 
 | Semaine       | Igor             | Souhail         | Adeline          | François        | Camille        |
 |---------------|------------------|-----------------|------------------|-----------------|----------------|
-| **Semaine 1** | Product Owner    | SCRUM MASTER    | Technicien       | Technicien      | Technicien     |
+| **Semaine 1** | Product Owner    | Scrum Master    | Technicien       | Technicien      | Technicien     |
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
