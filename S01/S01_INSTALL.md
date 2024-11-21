@@ -9,7 +9,9 @@ L'infrastructure actuelle est organisée de la manière suivante :
   
 - Aucun serveur ni matériel réseau  
 
-- Réseau Wi-Fi fourni par un FAI et des répéteurs Wi-Fi  
+- Réseau Wi-Fi fourni par un FAI et des répéteurs Wi-Fi
+
+- PCs en workgroups avec une connexion sans mot de passe  
 
 - Adresse réseau en 192.168.10.0/24  
 
