@@ -24,4 +24,14 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
+**Objectifs Sprint 1:**   
+1 . Faire une proposition d'objectif par sprint pour l'ensemble de la formation (Détails de chaque semaine et de chaque objectifs)   
+2. Réaliser un schéma de cette infrastructure en l’état et de sa potentielle évolution:  
+- Matériel réseau
+- Serveur
+- Adresse de réseau
+3. Établir une convention de nommage    
+4. Faire une table de routage  
+
+
 ---
