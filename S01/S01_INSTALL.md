@@ -31,7 +31,8 @@ L'infrastructure actuelle est organisée de la manière suivante :
 
 L'infrastructure est composée de 10 réseaux distincts mis en place pour chaque département.  
 Ekoloclast prévoit une future fusion/acquisition. De ce fait, la création de réseaux distinct nous permet d'anticiper un besoin en adresses IP supplémentaires dans chaque département.  
-En optant pour des sous-réseaux, on risquerait de ne pas avoir assez d'adresses IP adressables lors de cette future fusion/acquisition.
+En optant pour des sous-réseaux, on risquerait de ne pas avoir assez d'adresses IP adressables lors de cette future fusion/acquisition.  
+Nous prévoyons la mise en place d'une DMZ, composée d'un Active Directory, d'un serveur DHCP, d'un serveur SMTP, d'un serveur FTP et d'une base de donnée.  
 
 ![Nouvelle organisation](https://github.com/user-attachments/assets/e70ffb26-8dc1-400f-8d9d-5895b47c6d19)
 
