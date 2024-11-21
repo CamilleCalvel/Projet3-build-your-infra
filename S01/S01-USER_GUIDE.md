@@ -1,4 +1,5 @@
-### Convention de nommage  
+# Convention de nommage  
+---
 
 Une convention de nommage a été établie pour les noms des départements :  
 
