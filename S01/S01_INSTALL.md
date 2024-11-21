@@ -7,17 +7,17 @@ L'infrastructure actuelle est organisée de la manière suivante :
   
 - 100% d'ordinateurs portables
   
-- aucun serveur ni matériel réseau  
+- Aucun serveur ni matériel réseau  
 
-- réseau Wi-Fi fourni par un FAI et des répéteurs Wi-Fi  
+- Réseau Wi-Fi fourni par un FAI et des répéteurs Wi-Fi  
 
-- adresse réseau en 192.168.10.0/24  
+- Adresse réseau en 192.168.10.0/24  
 
-- messagerie hébergée en cloud sur le web  
+- Messagerie hébergée en cloud sur le web  
 
-- une partie des membres du département ventes et développement commercial sont nomades  
+- Une partie des membres du département ventes et développement commercial sont nomades  
 
-- le stockage de données se fait en local sur les machines
+- Le stockage de données se fait en local sur les machines
 
 >Schéma de l'infrastructure actuelle 
 
