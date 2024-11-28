@@ -1,6 +1,6 @@
-# Guide d'installation des Rôles AD, DHCP et DNS
+# 🔱 Guide d'installation des Rôles AD, DHCP et DNS
 
-## 1. Installation du rôle Active Directory (AD)
+## :one: Installation du rôle Active Directory (AD)
 
 1. **Ouvrir Server Manager**.
 2. Dans le _Dashboard_, cliquer sur **Add roles and features**.
@@ -59,7 +59,7 @@
 
 ---
 
-## 2. Installation du rôle DHCP
+## :two: Installation du rôle DHCP
 
 1. **Ouvrir Server Manager**.
 2. Cliquer sur **Manage** -> **Add Roles and Features**.  
@@ -117,7 +117,7 @@
 
 ---
 
-## 3. Configuration du serveur DNS
+## :three: Configuration du serveur DNS
 
 ### 1. Créer une zone de recherche directe (Domaine → Adresse IP)
 
