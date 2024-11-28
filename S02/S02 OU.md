@@ -1,6 +1,6 @@
 # Ekoloclast
 
-## 1.Serveur ADDS Windows 2016 
+## 1.Serveur ADDS Windows 2022 
 
 **Domaine : ekoloclast.fr**
 
