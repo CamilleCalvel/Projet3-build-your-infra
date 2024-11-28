@@ -25,13 +25,19 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
-**Objectifs Sprint 1**   
+**Objectifs Sprint 2**   
 
-Objectifs Primaires:
+- Objectifs primaires : 
+  - Création et mise en route serveurs AD, DHCP, DNS, WinCoreDC
+  - Gérer les backup des 2 serveurs
+- Documentations
+  - Install.md → installation des serveurs
+  - User_Guide.md → gestion de l’AD, configuration IP
 
-
-Objectifs secondaires:  
-
+- Objectifs secondaires : 
+  - Créer une VM serveur Linux Debian
+  - Ajouter le serveur au Domain AD
+  - Assurer la connexion (SSH) entre les serveurs Windows et le serveur Debian
 
 **Objectifs Sprint 1**   
 
