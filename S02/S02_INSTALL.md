@@ -35,3 +35,16 @@ A la fin du processus d'installation apparait le message _"Configuration require
 - Lire la **Review Options** et passer à la suite avec **Next**
 - Une vérification de la configurer est lancée, si tout est ok le message **All prerequisite checks passed successfully** s'affiche, Cliquer sur **Install** comme indiquer dans la suite du message
 - A la fin de l'installation la machine redémarre automatiquement, le nom de session affiche ici: **WILDERS\Administrator**
+
+# Installation du serveur DHCP
+Sur le serveur Windows, aller sur le Server Manager, cliquer sur "Manage" -> "Add Roles and Features" puis une fenêtre apparaît avec les étapes suivantes :
+
+Before you begin : cliquer sur Next
+Installation Type : garder "Role-based or feature-based installation" coché, puis cliquer sur Next
+Server Selection : on séléctionne notre serveur qui est séléctionné par défaut puis on clique sur Next
+Select server roles : on séléctionne "DHCP Server", puis on clique sur Next
+Add Roles and Features Wizard : cliquer sur Add Features
+Features : on laisse par défaut, puis Next
+DHCP Server : Next
+Confirmation : Install
+Une notification apparaît en haut de la fenêtre, nous demandant de compléter la configuration du DHCP. On clique dessus puis on clique sur "Commit", et "Close".
