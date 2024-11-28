@@ -60,7 +60,7 @@ IP : 172.24.0.x
   - (OU) Gestion Immobilière
   - (OU) Logistique
  
-- **Service Généraux**
+- **Service Juridique**
   - (OU) Contrat
   - (OU) Contentieux
   
