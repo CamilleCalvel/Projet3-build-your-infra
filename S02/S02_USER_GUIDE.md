@@ -1,4 +1,4 @@
-# Gérer le domaine Active Directory en GUI
+# :computer: Gérer le domaine Active Directory en GUI
 
 #### 1- Créer une Unité d'Organisation
 
@@ -23,7 +23,7 @@
 ![Capture d'écran 2024-11-28 180927](https://github.com/user-attachments/assets/97b2556b-3490-4b84-ad19-cc5d33520e73)
 ![Capture d'écran 2024-11-28 180941](https://github.com/user-attachments/assets/0bcaf208-c7a9-4a4f-8602-d34de62db0e3)
 
-# Gérer le domaine Active Directory via Powershell
+# :fax: Gérer le domaine Active Directory via Powershell
 
 #### 1- Créer une Unité d'Organisation
 
