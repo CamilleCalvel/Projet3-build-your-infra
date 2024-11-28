@@ -1,4 +1,4 @@
-# Guide d'Installation des Rôles AD et DHCP
+# Guide d'installation des Rôles AD, DHCP et DNS
 
 ## 1. Installation du rôle Active Directory (AD)
 
