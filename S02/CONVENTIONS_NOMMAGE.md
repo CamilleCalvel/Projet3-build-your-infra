@@ -26,16 +26,19 @@
 
 # Ordinateurs/Noms des équipements
 
-| Nom Équipement (FR --> EN) | Numéro | Département | Lieu/Emplacement |
-|----------------------------|--------|-------------|------------------|
-| Smartphone                 | 001    | comm        | nomade           |
-| Serveur --> Server         |        |             | Paris20          |
-| Switch                     |        |             | Paris20          |
-| Routeur --> Router         |        |             | Paris20          |
-| Répéteur --> Repeater       |        |             | Paris20          |
-| Pare-feu --> Firewall       |        |             | Paris20          |
+| Nom Équipement (FR --> EN) / Composé en capital de 3 lettres représentant le nom équipement + 3 lettres représentant OS/type/marque d'équipement  | Numéro | Département/fonction |
+|----------------------------|--------|-------------|
+| Smartphone                 | 01    | comm        |
+| Serveur --> Server         |        |             |
+| Switch                     |        |             |
+| Routeur --> Router         |        |             |
+| Répéteur --> Repeater       |        |             |
+| Pare-feu --> Firewall       |        |             | 
 
-**Exemple** : `server-001-dsi-paris20`
+> liste d'exemples incomplète pour les équipement, à enrichir. Pour ce qui est des équipements essentiels en DSI, comme serveur, établir une limite de numérotation aorès laquelle on considère que l'équipement fait > partie d'une autre zone géographique
+> Pour les serveurs par exemple, une numérotation inférieure à 20 correspon à l'emplacement géographique "Paris". Au delà, la numérotation est réservée pour un potentiel autre lieu géographique
+
+**Exemple** : `SRVWIN-01-AD-DHCP-DNS`
 
 ---
 
