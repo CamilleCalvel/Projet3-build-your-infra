@@ -3,6 +3,7 @@
 **Réseau : 172.24.0.0/16**
 **Gateway : 172.24.255.254**
 **IP DNS : 172.24.255.254**
+**Subnet Mask pour tout les sous-réseaux : 255.255.255.0 CIDR /24**
 
 | Départements | Nbr de Services | Nbr de personnes/Département | Etendu du réseau | adresses disponibles |
 | --- | --- | --- | --- | --- |
