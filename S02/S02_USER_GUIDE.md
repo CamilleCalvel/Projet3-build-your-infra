@@ -1,4 +1,4 @@
-# Gérer le domaine Active Directory
+# Gérer le domaine Active Directory en GUI
 
 #### 1- Créer une Unité d'Organisation
 
@@ -22,3 +22,38 @@
 
 ![Capture d'écran 2024-11-28 180927](https://github.com/user-attachments/assets/97b2556b-3490-4b84-ad19-cc5d33520e73)
 ![Capture d'écran 2024-11-28 180941](https://github.com/user-attachments/assets/0bcaf208-c7a9-4a4f-8602-d34de62db0e3)
+
+# Gérer le domaine Active Directory via Powershell
+
+#### 1- Créer une Unité d'Organisation
+
+```powershell
+# Importer le module Active Directory si ce n'est pas déjà fait
+Import-Module ActiveDirectory
+
+# Définir le chemin de l'OU à créer
+$PathOU = "DC=NotreDomaine,DC=com"
+
+# Créer l'unité d'organisation
+New-ADOrganizationalUnit -Name $args[0] -Path $PathOU
+```
+
+#### 2- Créer un Groupe d'utilisateurs
+
+```powershell
+# Demander le nom du groupe à l'utilisateur
+$NomGroupe = Read-Host "Entrez le nom du groupe à créer"
+
+# Demander le chemin à l'utilisateur
+$CheminOU = Read-Host "Entrez le chemin de l'Unité Organisationnelle (OU) dans le format 'OU=Groupes,DC=mondomaine,DC=com'"
+
+# Demander la description du groupe
+$Description = Read-Host "Entrez une description pour le groupe"
+
+# Créer le groupe dans Active Directory
+New-ADGroup -Name $NomGroupe -GroupScope Global -Path $CheminOU -Description $Description -PassThru
+
+Write-Host "Le groupe '$NomGroupe' a été créé dans l'OU '$CheminOU'."
+```
+
+#### 3- Créer un utilisateur 
