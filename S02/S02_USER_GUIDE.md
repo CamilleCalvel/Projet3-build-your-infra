@@ -1,17 +1,17 @@
-# Gérer les comptes utilisateurs du domaine
+# Gérer le domaine Active Directory
 
 #### 1- Créer une Unité d'Organisation
 
 - Ouvrir l'application **Active Directory Users and Computers**
-- Faire clic droit sur le nom de domain (ici:**wilders.lan**), sélectionner **New** puis Cliquer sur **Organizational Unit**
-- Nommer l'unité d'organisation (ici:**Wilders_students**) et Cliquer sur **OK**
+- Faire clic droit sur le nom de domain (ici:**ekoloclast.local**), sélectionner **New** puis Cliquer sur **Organizational Unit**
+- Nommer l'unité d'organisation et Cliquer sur **OK**
 
 #### 2- Créer un Groupe d'utilisateurs
-- Faire clic droit sur le nom de l'unité d'organisation (ici:**Wilders_students**), sélectionner **New** puis Cliquer sur **Group**
-- Nommer le groupe (ici:**Students**) et Cliquer sur **OK**
+- Faire clic droit sur le nom de l'unité d'organisation, sélectionner **New** puis Cliquer sur **Group**
+- Nommer le groupe et Cliquer sur **OK**
 
 #### 3- Créer un utilisateur 
-- Faire clic droit sur le nom de l'unité d'organisation (ici:**Wilders_students**), sélectionner **New** puis Cliquer sur **User**
+- Faire clic droit sur le nom de l'unité d'organisation, sélectionner **New** puis Cliquer sur **User**
 - Renseigner les informations utilisateurs:
 	- Indiquer le **First Name**
 	- Indiquer le **Last Name**
