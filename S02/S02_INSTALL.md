@@ -9,7 +9,7 @@
    - Cocher **Role-based or feature-based installation**.  
    - Cliquer sur **Next**.
 5. Dans _Server Selection_ :  
-   - Sélectionner un serveur (exemple : **SRV-DHCP-DNS**).  
+   - Sélectionner un serveur: **SRVWIN-01-AD-DHCP-DNS**
    - Cliquer sur **Next**.
 6. Dans _Server Roles_ :  
    - Cocher **Active Directory Domain Services**.  
@@ -24,7 +24,7 @@
 ---
 
 ### À la fin de l’installation :
-- Un message apparaît : _"Configuration required. Installation on SRV-DHCP-DNS."_  
+- Un message apparaît : _"Configuration required. Installation on SRVWIN-01-AD-DHCP-DNS."_  
 - Cliquer sur **Promote this server to a domain controller**.
 
 ---
@@ -93,3 +93,73 @@
     - Cliquer dessus.  
     - Cliquer sur **Commit**.  
     - Cliquer sur **Close**.
+
+## Installation du rôle DNS
+
+1. **Ouvrir Server Manager**.
+2. Dans le _Dashboard_, cliquer sur **Add roles and features**.
+3. Dans _Before You Begin_, cliquer sur **Next**.
+4. Dans _Installation Type_ :  
+   - Cocher **Role-based or feature-based installation**.  
+   - Cliquer sur **Next**.
+5. Dans _Server Selection_ :  
+   - Sélectionner un serveur (exemple : **SRV-DHCP**).  
+   - Cliquer sur **Next**.
+6. Dans _Server Roles_ :  
+   - Cocher **DNS Server**.  
+   - Une fenêtre s’ouvre :  
+     - Cocher **Include management tools (if applicable)**.  
+     - Cliquer sur **Add Features**.  
+   - Cliquer sur **Next**.
+7. Dans _Features_, cliquer sur **Next**.
+8. Dans _DNS Server_, cliquer sur **Next**.
+9. Dans _Confirmation_, cliquer sur **Install**.
+
+---
+
+## 3. Configuration du serveur DNS
+
+### 1. Créer une zone de recherche directe (Domaine → Adresse IP)
+
+1. Ouvrir l’application **DNS**.  
+2. Aller dans **SRVWIN-01-AD-DHCP-DNS**.
+3. Faire un clic droit sur **Forward Lookup Zones** et sélectionner **New Zone...**.
+4. Dans _New Zone Wizard_ :  
+   - Cliquer sur **Next**.
+5. Dans _Zone Type_ :  
+   - Cocher **Primary zone**.  
+   - Cliquer sur **Next**.
+6. Dans _Zone Name_ :  
+   - Définir un nom de domaine: **Ekoloclast.local** 
+   - Cliquer sur **Next**.
+7. Dans _Zone File_ :  
+   - Créer un fichier de zone en utilisant votre nom de domaine local suivi du suffixe ".dns" (exemple : **Ekoloclast.local.dns**).  
+   - Cliquer sur **Next**.  
+   - Les fichiers de zones sont généralement créés dans le dossier :  
+     `C:\Windows\system32\dns`.
+8. Dans _Dynamic Update_ :  
+   - Cocher **Do not allow dynamic updates** si aucun Active Directory n’est installé.  
+   - Cliquer sur **Next**.
+9. Terminer la création en cliquant sur **Finish**.
+
+---
+
+### 2. Créer une zone de recherche inversée (Adresse IP → Domaine)
+
+1. Faire un clic droit sur **Reverse Lookup Zones** et sélectionner **New Zone...**.
+2. Dans _New Zone Wizard_ :  
+   - Cliquer sur **Next**.
+3. Dans _Zone Type_ :  
+   - Cocher **Primary zone**.  
+   - Cliquer sur **Next**.
+4. Dans _Reverse Lookup Zone Name_ :  
+   - Cocher **IPv4 Reverse Lookup Zone** 
+   - Cliquer sur **Next**.  
+   - Indiquer l’ID réseau dans **Network ID**: **172.24.0**
+5. Dans _Zone File_ :  
+   - Windows Server crée par défaut un fichier de zone basé sur l’ID réseau inversé suivi du suffixe **"in-addr.arpa.dns"**: **172.20.0.in-addr.arpa.dns**).  
+   - Cliquer sur **Next**.
+6. Dans _Dynamic Update_ :  
+   - Cocher **Do not allow dynamic updates** si aucun Active Directory n’est installé.  
+   - Cliquer sur **Next**.
+7. Terminer la création en cliquant sur **Finish**.
