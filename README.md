@@ -30,6 +30,9 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 - Objectifs primaires : 
   - Création et mise en route serveurs AD, DHCP, DNS, WinCoreDC
   - Gérer les backup des 2 serveurs
+  - Créer l’arborescence de l’AD
+      - Mise en place des OU, groupes et utilisateurs
+
 - Documentations
   - Install.md → installation des serveurs
   - User_Guide.md → gestion de l’AD, configuration IP
