@@ -22,8 +22,30 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 |---------------|------------------|-----------------|------------------|-----------------|----------------|
 | **Semaine 1** | Product Owner    | Scrum Master    | Technicienne     | Technicien      | Technicienne   |
 | **Semaine 2** | Technicien       | Technicien      | Technicienne     | Scrum Master    | Product Owner  |
+| **Semaine 3** | Technicien       | Product Owner     | Scrum Master   | Technicien      | Technicienne   |
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
+
+**Objectifs Sprint 3**
+
+- Objectifs primaires :
+  - GPO : 5 règles de sécurité
+  - Installation de Glpi sur serveur debian:
+      - Syncronisation avec l'AD et inclusion des objets AD
+      - Mise en place du système de ticketing
+      - Accès et gestion à partir du client
+  - Finaliser les objetcifs des semaines précédentes:
+      - Ajouter le DC au Windows Core
+      - Gérer le windows backup des deux serveurs
+      - Ajouter les données utilisateurs sur l'AD
+
+- Objectifs secondaires :
+  - GPO : 5 règles GPO standard
+
+- Objectifs optionnels :
+    - Automatiser Installation Glpi (script shell)
+    - Automatiser Installation AD-DS (script powershell)
+    - Assurer le connexion (SSh) entre les serveurs Windows et Debian
 
 **Objectifs Sprint 2**   
 
