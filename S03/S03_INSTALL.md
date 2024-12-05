@@ -1,6 +1,3 @@
-Voici une version en **Markdown** prête pour GitHub : 
-
-```markdown
 # Préparation et Installation d'Ubuntu Server pour GLPI
 
 ## 👉 Préparation de la VM
@@ -55,7 +52,7 @@ Voici une version en **Markdown** prête pour GitHub :
 2. Retirez l'ISO de la VM et appuyez sur `Entrée`.
 3. Connectez-vous avec le compte **wilder** et le mot de passe défini (le clavier est maintenant en **AZERTY**).
 4. Vérifiez la configuration réseau avec la commande suivante :
-
+```
    ```bash
    ip a
    ```
@@ -63,9 +60,7 @@ Voici une version en **Markdown** prête pour GitHub :
 5. Si la configuration est correcte, créez un **snapshot** de la VM à partir de l'hyperviseur.
 
 --- 
-Voici une version en **Markdown** pour la section configuration à publier sur GitHub : 
 
-```markdown
 # 👉 Configuration
 
 ## Installation des prérequis
@@ -117,10 +112,7 @@ sudo apt-get update && sudo apt-get upgrade
 ## Configuration de MariaDB
 
 Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environnement pour votre application (détails à ajouter selon la configuration précise à effectuer).
-```
-Voici une version en **Markdown** pour GitHub : 
 
-```markdown
 # 👉 Configuration de la base de données et installation de GLPI
 
 ## Configuration de MariaDB
@@ -216,10 +208,7 @@ Voici une version en **Markdown** pour GitHub :
 ---
 
 GLPI est maintenant configuré pour être installé sur votre serveur. Passez à l'étape suivante pour compléter l'installation via l'interface web.
-``` 
-Voici une version en **Markdown** pour GitHub : 
 
-```markdown
 # 👉 Installation de GLPI
 
 L'installation de GLPI se fait via un navigateur web à partir d'une autre machine sur le même réseau que votre serveur GLPI.
@@ -286,4 +275,4 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 2. Cliquez sur `Continuer` pour finaliser la configuration.
 
 GLPI est maintenant prêt à être utilisé. Accédez à l'interface utilisateur et connectez-vous avec les identifiants par défaut.
-```
+
