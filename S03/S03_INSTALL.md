@@ -52,10 +52,10 @@
 2. Retirez l'ISO de la VM et appuyez sur `Entrée`.
 3. Connectez-vous avec le compte **wilder** et le mot de passe défini (le clavier est maintenant en **AZERTY**).
 4. Vérifiez la configuration réseau avec la commande suivante :
+
 ```
-   ```bash
    ip a
-   ```
+```
 
 5. Si la configuration est correcte, créez un **snapshot** de la VM à partir de l'hyperviseur.
 
@@ -276,3 +276,110 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 
 GLPI est maintenant prêt à être utilisé. Accédez à l'interface utilisateur et connectez-vous avec les identifiants par défaut.
 
+---
+---
+---
+
+# Vérifications si problème d'installation.
+
+Votre plan d'installation et de configuration de GLPI semble complet et fonctionnel. Voici un récapitulatif des points clés à vérifier pour garantir que tout fonctionne comme prévu :
+
+---
+
+### **Vérification préalable**
+
+1. **ISO d'Ubuntu Server** : Assurez-vous d'utiliser une version compatible avec les prérequis de GLPI (actuellement, Ubuntu 20.04 ou 22.04 LTS sont préférés).
+2. **Réseau** :
+   - Mode **bridge** pour télécharger les mises à jour et les fichiers nécessaires.
+   - Puis mode **réseau interne** pour accéder depuis une machine client.
+
+---
+
+### **Étapes critiques à valider**
+
+1. **Installation et configuration d'Apache** :
+   - Vérifiez que le service Apache est actif après l'installation :
+     ```bash
+     sudo systemctl status apache2
+     ```
+   - Testez l'accès au serveur local en entrant `http://127.0.0.1` dans un navigateur sur la VM.
+
+2. **Configuration de MariaDB** :
+   - Pendant l'exécution de `sudo mysql_secure_installation`, notez bien le mot de passe **root**.
+   - Après avoir créé la base de données `glpidb` et l'utilisateur `glpi`, vérifiez que les privilèges sont correctement assignés :
+     ```sql
+     SHOW GRANTS FOR 'glpi'@'localhost';
+     ```
+
+3. **PHP et extensions** :
+   - Assurez-vous que les extensions PHP installées correspondent aux besoins de GLPI :
+     ```bash
+     php -m | grep -E "ldap|imap|apcu|xmlrpc|curl|gd|json|mbstring|mysql|intl|zip|bz2"
+     ```
+   - Testez la configuration PHP avec un fichier `phpinfo()`.
+
+4. **Téléchargement et configuration de GLPI** :
+   - Validez que les fichiers GLPI sont bien extraits dans `/var/www/glpi.monNomDeDomaine/` et accessibles.
+   - Assurez-vous que les permissions sur ce dossier permettent l'écriture par Apache :
+     ```bash
+     ls -l /var/www/glpi.monNomDeDomaine/
+     ```
+
+5. **Configuration de PHP (`php.ini`)** :
+   - Vérifiez que les changements ont été appliqués en redémarrant Apache :
+     ```bash
+     sudo systemctl restart apache2
+     ```
+
+---
+
+### **Vérification réseau**
+
+1. **Adresse IP fixe** :
+   - Validez la configuration avec la commande :
+     ```bash
+     ip a
+     ```
+   - Testez la connectivité entre les deux VMs avec `ping`.
+
+2. **Accès depuis une autre machine** :
+   - Ouvrez un navigateur sur une machine du même réseau et accédez à :
+     ```
+     http://[IP de votre serveur]/glpi
+     ```
+   - Si cela échoue, vérifiez les règles de pare-feu sur la VM :
+     ```bash
+     sudo ufw allow in "Apache Full"
+     sudo ufw enable
+     ```
+
+---
+
+### **Installation via l'interface GLPI**
+
+1. **Langue et licence** :
+   - Assurez-vous que les prérequis système sont validés par GLPI avant de continuer.
+
+2. **Base de données MariaDB** :
+   - Testez la connexion à la base depuis PHP en créant un script temporaire :
+     ```php
+     <?php
+     $link = mysqli_connect("127.0.0.1", "glpi", "votreMotDePasse", "glpidb");
+     if (!$link) {
+         die('Erreur de connexion : ' . mysqli_error($link));
+     }
+     echo 'Connexion réussie à MariaDB';
+     ?>
+     ```
+
+---
+
+### **Validation finale**
+
+1. Accédez à l'interface de connexion GLPI après l'installation.
+2. Connectez-vous avec les identifiants par défaut :
+   - **Admin** : `glpi`
+   - **Mot de passe** : `glpi`
+
+---
+ 😊
