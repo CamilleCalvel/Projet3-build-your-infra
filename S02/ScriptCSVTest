@@ -1,0 +1,38 @@
+# Import-Module ActiveDirectory est requis
+Import-Module ActiveDirectory
+
+# Chemin vers le fichier CSV
+$csvPath = "C:\Users\Administrator\Desktop\Users.csv"
+
+# Importation des données depuis le CSV
+$users = Import-Csv -Path $csvPath -Delimiter ','
+
+foreach ($user in $users) {
+    # Définir des variables pour chaque utilisateur
+    $FirstName = $user."Prénom"
+    $LastName = $user."Nom"
+    $DisplayName = "$FirstName $LastName"
+    $UserPrincipalName = "$FirstName.$LastName@ekoloclast.fr"
+    $SamAccountName = "$FirstName.$LastName"
+    $Company = $user."Société"
+    $Department = $user."Département"
+    $Title = $user."Fonction"
+    $Office = $user."Site"
+    $PhoneNumber = $user."Téléphone fixe"
+
+    # Création de l'utilisateur dans Active Directory
+    New-ADUser `
+        -GivenName $FirstName `
+        -Surname $LastName `
+        -Name $DisplayName `
+        -SamAccountName $SamAccountName `
+        -UserPrincipalName $UserPrincipalName `
+        -Company $Company `
+        -Department $Department `
+        -Title $Title `
+        -Office $Office `
+        -OfficePhone $PhoneNumber `
+        -Path "OU=Users,DC=ekoloclast,DC=local" `
+        -AccountPassword (ConvertTo-SecureString "DefaultPassword123!" -AsPlainText -Force) `
+        -Enabled $true
+}
