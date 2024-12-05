@@ -25,6 +25,35 @@ if (-not (Get-Module -ListAvailable -Name $moduleName)) {
     Write-Host "$moduleName est déjà installé."
 }
 
+
+# Fonction pour retirer les accents des caractères
+function Remove-Accents {
+    param (
+        [string]$input
+    )
+    $output = $input -replace 'é', 'e' `
+                    -replace 'è', 'e' `
+                    -replace 'ê', 'e' `
+                    -replace 'ë', 'e' `
+                    -replace 'à', 'a' `
+                    -replace 'á', 'a' `
+                    -replace 'â', 'a' `
+                    -replace 'ä', 'a' `
+                    -replace 'ç', 'c' `
+                    -replace 'î', 'i' `
+                    -replace 'ï', 'i' `
+                    -replace 'ô', 'o' `
+                    -replace 'ó', 'o' `
+                    -replace 'ö', 'o' `
+                    -replace 'ù', 'u' `
+                    -replace 'û', 'u' `
+                    -replace 'ü', 'u' `
+                    -replace 'ÿ', 'y' `
+                    -replace 'œ', 'oe' `
+                    -replace 'æ', 'ae'
+    return $output
+}
+
 # Demander à l'utilisateur de saisir le chemin du fichier source .xlsx
 $sourceFile = Read-Host "Veuillez entrer le chemin complet du fichier source .xlsx"
 
@@ -50,6 +79,17 @@ try {
 } catch {
     Write-Host "Erreur lors de l'importation du fichier Excel : $_"
     exit 1
+}
+
+# Traiter les données pour supprimer les accents dans chaque cellule
+$excelData = $excelData | ForEach-Object {
+    $newObj = $_ | Select-Object *
+    $newObj.PSObject.Properties.GetEnumerator() | ForEach-Object {
+        if ($_.Value -is [string]) {
+            $_.Value = Remove-Accents $_.Value
+        }
+    }
+    $newObj
 }
 
 # Exporter les données au format CSV
