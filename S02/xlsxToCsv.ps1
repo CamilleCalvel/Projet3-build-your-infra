@@ -1,6 +1,14 @@
 # Vérifier si le module ImportExcel est installé
 $moduleName = "ImportExcel"
 
+# Vérifie si l'utilisateur actuel est un administrateur
+$isAdmin = (New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+if ($isAdmin) {
+    # Applique la politique d'exécution Unrestricted uniquement pour les administrateurs
+    Set-ExecutionPolicy Unrestricted -Scope Process
+}
+
 # Vérification de l'existence du module
 if (-not (Get-Module -ListAvailable -Name $moduleName)) {
     Write-Host "$moduleName n'est pas installé. Installation en cours..."
