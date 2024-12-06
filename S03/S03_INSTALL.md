@@ -1,48 +1,56 @@
-# Préparation et Installation d'Ubuntu Server pour GLPI
+# Préparation et Installation Debian 12 Server pour GLPI
 
 ## 👉 Préparation de la VM
 
 1. **Téléchargez l'image ISO d'Ubuntu Server** :  
-   - Vous pouvez télécharger une image ISO depuis [le site officiel d'Ubuntu](https://ubuntu.com/download/server).
+   - Vous pouvez télécharger une image ISO depuis [le site officiel Debian](https://www.debian.org/distrib/).
 
 2. **Préparez une VM** avec un hyperviseur comme **VirtualBox** selon les caractéristiques suivantes :  
    - **RAM** : Au minimum **2 Go**.  
    - **Disque dur** : Au minimum **20 Go**.  
-   - **Réseau** : Configurez la carte réseau en mode **bridge** pour permettre à la VM <br>
- de communiquer avec votre réseau local et la box Internet.  
+   - **Réseau** : Configurez une carte réseau en mode **bridge** pour permettre à la VM <br>
+ de communiquer avec votre réseau local et la box Internet.<br> Et configurer une autre carte réseau en **interne**. 
    - **Image ISO** : Insérez l'image ISO d'Ubuntu Server dans la VM.
 
 ---
 
-## 👉 Installation d'Ubuntu Server
+## 👉 Installation Debian Server
 
 - **Navigation dans les menus** :  
   Utilisez les **flèches du clavier** et la **tabulation** pour vous déplacer, et sélectionnez avec **Entrée** ou **Espace**.
 
 ### Étapes d'installation :
 
-1. **Démarrez la VM** et sélectionnez l'option `Try or Install` dans le menu GNU GRUB.
-2. **Choisissez la langue** : `Français`.
-3. **Mise à jour du programme d'installation** : Choisissez `Continuer sans mettre à jour`.
-4. **Configuration clavier** : Sélectionnez `French` pour les deux options.
-5. **Type d'installation** : Choisissez `Ubuntu Server` (et **pas minimized**).
-6. **Connexion réseau** : Attendez que la configuration réseau automatique se fasse, puis cliquez sur `Terminer`.
-7. **Configuration du proxy** : Ne rien mettre, cliquez sur `Terminer`.
-8. **Miroir d'archives** : Laissez la valeur par défaut et cliquez sur `Terminer`.
-9. **Configuration de stockage** :  
-   - Choisissez `Utiliser un disque entier`.  
-   - Cliquez deux fois sur `Terminé`.  
-10. **Confirmation de l'action** : Choisissez `Continuer`.
-11. **Configuration du profil** :  
+1. **Démarrez la VM** et sélectionnez l'option `Graphical install` dans le menu.
+2. **Choisissez la langue** : `French`.
+3. **Configuration clavier** : Sélectionnez `French` pour les deux options.
+4. **Mise à jour du programme d'installation** : Choisissez `Continuer sans mettre à jour`.
+5. **Donner un nom au serveur** : `SRVLIN-03`.
+6. **Configurer le réseau local** : `laisser vide` ou sélectionnez `Entrée`.
+7. **Choisissez un mot de passe Fort pour le root** : il aura tout les privilèges.
+8. **Création le compte Utilisateur** :
     - **Nom complet** : Mettez un nom.  
-    - **Nom de machine** : Mettez `glpi-server`.  
-    - **Nom d'utilisateur** : Mettez `wilder`.  
-    - **Mot de passe** : Saisissez un mot de passe (attention, le clavier est en **QWERTY**).  
-    - Cliquez sur `Terminé`.
-
-12. **Configuration SSH** : Ne cochez pas la case et cliquez sur `Terminé`.
-13. **Options supplémentaires** : Ne rien cocher, cliquez sur `Terminé`.
-14. **Installation** : Patientez quelques minutes pendant l'installation.
+    - **Nom d'utilisateur** : Mettez un Nom ou alias.  
+    - **Mot de passe** : Saisissez un mot de passe (attention, le clavier est en **Azerty** si vous avez sélectionné `French` dans les étapes précédentes).  
+    - Cliquez sur `Continuer`.
+9. **Partionnez votre disque** : Choissisé un partionnement sinon pour plus de facilité choisissez `Assisté-utiliser un disque entier`.
+10. **Sélectionnez le disque** : Il faut choisir sur quel disque vous voulez installer Debian puis `Continuer`.
+11. **Choissisez le nombre de partion** : Choissisez `Tout dans une seule partion` Recommandé.
+12. **Terminez le partionnement** : `Appliquer les changements`.
+13. **Finissez par** : `Oui`et cliquez sur `Continuer` pour lancer l'installation. 
+14. **Confirmation de l'action** : Selectionnez `Oui` puis choisissez `Continuer`.
+15. **Outils de Gestion des Paquets** : Analyser d'autres supports cliquez `Non`.
+16. **Choix du miroir** : Choissisez le plus proche de votre pays puis `Continuer`.
+14. **D'après votre sélection du pays** : Pour nous `deb.debian.org`, cliquez sur `Continué`.
+15. **Paramètres du mandataire** : Laissez vide et appuyer sur `Continué`
+16. **Participé à l'étude** : Cliquez `Non`.
+17. **Sélection des logiciels** : A votre bon vouloir puis `Continué`
+18. **Démarrage GRUB** : Cliquez `Oui`
+19. **Choix Disque** : Choisissez Le disque partionné dans les étapes précédentes puis `Continué`
+20. **Terminer l'installation** : Appuyer sur `Continué`.<br>
+<p align="center">
+<i>Le serveur va démarrer et votre installation est FINITO.</i>
+</p>
 
 ---
 
