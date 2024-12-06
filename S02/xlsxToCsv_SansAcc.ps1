@@ -1,4 +1,3 @@
-
 ##################################################################################
 #                                                                                #
 #  Script pour modifier un fichier xlsx en CSV                                   #
@@ -147,12 +146,19 @@ $data = $excelData[1..($excelData.Count - 1)] | ForEach-Object {
     $newObj
 }
 
-# Réintégrer la première ligne (headers)
-$data = @($headers) + $data
+# Réintégrer les en-têtes dans les données
+$finalData = @()
+$finalData += [PSCustomObject]@{ 
+    for ($i = 0; $i -lt $headers.Count; $i++) {
+        $header = $headers[$i]
+        $finalData[0].PSObject.Properties.Add($header, $excelData[0][$i])
+    }
+}
+$finalData += $data
 
 # Exporter les données au format CSV
 try {
-    $data | Export-Csv -Path $csvFile -NoTypeInformation
+    $finalData | Export-Csv -Path $csvFile -NoTypeInformation
     Write-Host "Conversion en CSV réussie ! Le fichier a été enregistré à : $csvFile"
 } catch {
     Write-Host "Erreur lors de l'exportation en CSV : $_"
