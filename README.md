@@ -23,9 +23,22 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 | **Semaine 1** | Product Owner    | Scrum Master    | Technicienne     | Technicien      | Technicienne   |
 | **Semaine 2** | Technicien       | Technicien      | Technicienne     | Scrum Master    | Product Owner  |
 | **Semaine 3** | Technicien       | Product Owner     | Scrum Master   | Technicien      | Technicienne   |
+| **Semaine 4** |      |      |    |     |    |
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
+**Objectifs Sprint 4**
+
+- Objectifs primaires :
+  - Gestion du serveur GLPI :
+    - Syncronisation avec l'AD et inclusion des objets AD
+    - Mise en place du système de ticketing
+     - Accès et gestion à partir du client
+  - Gérer le windows backup des deux serveurs
+  - Ajouter les données utilisateurs sur l'AD
+- Objectifs secondaires :
+  - GPO : 5 règles GPO standard
+ 
 **Objectifs Sprint 3**
 
 - Objectifs primaires :
@@ -34,7 +47,7 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
       - Syncronisation avec l'AD et inclusion des objets AD
       - Mise en place du système de ticketing
       - Accès et gestion à partir du client
-  - Finaliser les objetcifs des semaines précédentes:
+  - Finaliser les objetctifs des semaines précédentes:
       - Ajouter le DC au Windows Core
       - Gérer le windows backup des deux serveurs
       - Ajouter les données utilisateurs sur l'AD
