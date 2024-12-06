@@ -58,7 +58,7 @@
 
 1. Une fois l'installation terminée, choisissez `Redémarrer maintenant`.
 2. Retirez l'ISO de la VM et appuyez sur `Entrée`.
-3. Connectez-vous avec le compte **utilisateur** et le mot de passe défini (le clavier est maintenant en **AZERTY**).
+3. Connectez-vous avec le compte **utilisateur** et le mot de passe défini.
 4. Vérifiez la configuration réseau avec la commande suivante :
 
 ```
