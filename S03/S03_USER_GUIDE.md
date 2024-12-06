@@ -85,16 +85,6 @@ Uniformiser les paramètres d’alimentation des postes clients (mise en veille,
 - Vérifier que les options d’alimentation sont appliquées dans "Options d’alimentation" sur le poste.  
 ### Note :  
 Cette GPO s’applique généralement à des ordinateurs (et non aux utilisateurs).  
-
-
-
-
-
-###################################################################
-
-
-
-
  
 ## :three: GPO - Verrouillage de compte (blocage après plusieurs erreurs de mot de passe)  
 >**Objectif** :  
@@ -127,7 +117,7 @@ Empêcher les utilisateurs d'accéder et de modifier le registre.
 ---  
 **Configuration** :  
 **1. Naviguer vers** :  
-`User Configuration > Policies > Administrative Templates > System`
+`User Configuration > Policies > Administrative Templates > System`  
 **2. Activer la stratégie** :  
 - Prevent access to registry editing tools.
 
