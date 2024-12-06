@@ -177,8 +177,6 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    </Directory>
    ```
 
----
-
 ### Étape 2 : Redémarrer Apache
 Appliquez les modifications en redémarrant le service Apache :
 ```bash
