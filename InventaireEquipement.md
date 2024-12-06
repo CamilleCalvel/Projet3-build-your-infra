@@ -1,3 +1,6 @@
+> Prend en compte les conventions de nommage des équipements
+
+
 # Serveurs
 
 | NomEquipInProxmox     | Hostname            | Adresse IP   | Adresse Réseau | Masque de sous réseau |
