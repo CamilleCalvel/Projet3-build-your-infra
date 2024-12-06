@@ -142,29 +142,55 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    mysql -u root -p
    ```
 
-   > Si aucun mot de passe root n'est configuré (par défaut sur Ubuntu), appuyez simplement sur **Entrée**.
-
 3. Configurez la base de données et les utilisateurs :
 
    ```sql
-   CREATE DATABASE glpidb CHARACTER SET utf8 COLLATE utf8_bin;
-   GRANT ALL PRIVILEGES ON glpidb.* TO glpi@localhost IDENTIFIED BY 'motDePasse';
+   CREATE DATABASE ekoglpidb CHARACTER SET utf8 COLLATE utf8_bin;
+   GRANT ALL PRIVILEGES ON ekoglpidb.* TO ekoadmin@localhost IDENTIFIED BY 'motDePasse';
    FLUSH PRIVILEGES;
    QUIT;
    ```
 
-   - **Nom de la base de données** : `glpidb`  
-   - **Utilisateur** : `glpi`  
+   - **Nom de la base de données** : `ekoglpidb`  
+   - **Utilisateur** : `ekoadmin`  
    - **Mot de passe** : `motDePasse` (à remplacer par votre propre mot de passe sécurisé)
 
 ---
+# Configuration Apache pour GLPI
 
+## 1. Ajouter une configuration spécifique pour GLPI
+
+### Étape 1 : Modifier le fichier de configuration
+1. Ouvrez le fichier **000-default.conf** :
+   ```bash
+   sudo nano /etc/apache2/sites-available/000-default.conf
+   ```
+
+2. Ajoutez la configuration suivante **avant** la ligne `</VirtualHost>` :
+   ```apache
+   Alias /glpi /var/www/glpi
+
+   <Directory /var/www/glpi>
+       Options Indexes FollowSymLinks
+       AllowOverride All
+       Require all granted
+   </Directory>
+   ```
+
+---
+
+### Étape 2 : Redémarrer Apache
+Appliquez les modifications en redémarrant le service Apache :
+```bash
+sudo systemctl restart apache2
+```
+---
 ## Récupération des sources GLPI
 
 1. Téléchargez les sources de GLPI :
 
    ```bash
-   wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz
+   wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.10.tgz
    ```
 
 2. Créez un répertoire pour héberger GLPI :
@@ -172,15 +198,15 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    Si vous souhaitez lier le serveur GLPI à un nom de domaine :  
 
    ```bash
-   sudo mkdir /var/www/glpi.monNomDeDomaine
+   sudo mkdir /var/www/glpi.ekoloclast.local
    ```
 
-   Sinon, remplacez `glpi.monNomDeDomaine` par un nom arbitraire.
+   Sinon, remplacez `glpi.NomDeDomaine` par un nom arbitraire.
 
 3. Extrayez et déplacez les fichiers téléchargés :
 
    ```bash
-   sudo tar -xzvf glpi-10.0.2.tgz
+   sudo tar -xzvf glpi-10.0.10.tgz
    sudo cp -R glpi/* /var/www/glpi.monNomDeDomaine/
    ```
 
@@ -284,6 +310,13 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 
 GLPI est maintenant prêt à être utilisé. Accédez à l'interface utilisateur et connectez-vous avec les identifiants par défaut.
 
+---
+---
+---
+---
+---
+---
+---
 ---
 ---
 ---
