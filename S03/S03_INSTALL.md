@@ -280,7 +280,7 @@ GLPI est maintenant prêt à être utilisé. Accédez à l'interface utilisateur
 ---
 ---
 
-# Vérifications si problème d'installation.
+# 👉 Vérifications si problème d'installation.
 
 Votre plan d'installation et de configuration de GLPI semble complet et fonctionnel. Voici un récapitulatif des points clés à vérifier pour garantir que tout fonctionne comme prévu :
 
@@ -333,7 +333,7 @@ Votre plan d'installation et de configuration de GLPI semble complet et fonction
 
 ---
 
-### **Vérification réseau**
+###  **Vérification réseau**
 
 1. **Adresse IP fixe** :
    - Validez la configuration avec la commande :
