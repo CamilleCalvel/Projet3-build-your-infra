@@ -170,6 +170,7 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    ```apache
 
      Alias /glpi /var/www/glpi
+   
    DocumentRoot /var/www/glpi.ekoloclast.local
 
  
@@ -255,8 +256,8 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 ## Configuration réseau de la VM Ubuntu
 
 ### Étapes de configuration :
-1.**Eteindre le serbeur GLPI.**
-2.**Allumer une VM Ubuntu** et configurer son réseau interne sur `172.24.0.4/24` pour qu'elle se connacte sur le serveur GLPI.
+1.**Eteindre le serveur GLPI.** <br>
+2.**Allumer une VM Ubuntu** et configurer son réseau interne sur `172.24.0.4/24` pour qu'elle se connecte sur le serveur GLPI.
 3.**Redémarrez la VM SRVLIN-03 (Serveur Debian).**
 
 ### Vérification de la connectivité :
