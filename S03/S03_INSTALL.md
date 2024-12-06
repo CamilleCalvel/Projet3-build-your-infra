@@ -9,7 +9,7 @@
    - **RAM** : Au minimum **2 Go**.  
    - **Disque dur** : Au minimum **20 Go**.  
    - **Réseau** : Configurez une carte réseau en mode **bridge** pour permettre à la VM <br>
- de communiquer avec votre réseau local et la box Internet.<br> Et configurer une autre carte réseau en **interne** : *`172.24.0.4/24`*. 
+ de communiquer avec votre réseau local et la box Internet.<br> Et configurer une autre carte réseau en **interne** : *`172.24.0.3/24`*. 
    - **Image ISO** : Insérez l'image ISO Debian 12 dans la VM.
 
 ---
@@ -256,17 +256,15 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 ## Configuration réseau de la VM Ubuntu
 
 ### Étapes de configuration :
-1.**Eteindre le serveur GLPI.** <br>
-2.**Allumer une VM Ubuntu** et configurer son réseau interne sur `172.24.0.4/24` pour qu'elle se connecte sur le serveur GLPI.
-3.**Redémarrez la VM SRVLIN-03 (Serveur Debian).**
+1.**Allumer une VM Ubuntu** 
+2. Configurer son réseau interne sur `172.24.0.4/24` pour qu'elle se connecte avec  le serveur GLPI.
 
 ### Vérification de la connectivité :
 
-1. Démarrez la VM sur le même réseau (Ubuntu).
-2. Testez la connexion avec une commande **ping** vers la VM Debian Server :
+1. Testez la connexion avec une commande **ping** vers la VM Debian Server :
 
    ```bash
-   ping 172.24.0.4
+   ping 172.24.0.3
    ```
 
    Si le ping fonctionne, la configuration réseau est correcte.
