@@ -2,7 +2,7 @@
 ##################################################################################
 #                                                                                #
 #  Script pour modifier un fichier xlsx en CSV                                   #
-#                                                                                #
+#               avec la gestion des accents                                      #
 ##################################################################################
 
 
@@ -60,12 +60,17 @@ function Remove-AccentsFromHeaders
 {
     param ([string]$String)
 
-    # Remplacer les caractères accentués par leur version non accentuée
-    $String = $String.Replace('é', 'e').Replace('è', 'e').Replace('ê', 'e').Replace('ë', 'e')
-                     .Replace('à', 'a').Replace('á', 'a').Replace('â', 'a').Replace('ä', 'a')
-                     .Replace('ç', 'c').Replace('î', 'i').Replace('ï', 'i').Replace('ô', 'o')
-                     .Replace('ó', 'o').Replace('ö', 'o').Replace('ù', 'u').Replace('û', 'u')
-                     .Replace('ü', 'u').Replace('ÿ', 'y').Replace('œ', 'oe').Replace('æ', 'ae')
+    # Vérification que la valeur est bien une chaîne de caractères (string)
+    if ($String -is [string]) {
+        # Remplacer les caractères accentués par leur version non accentuée
+        $String = $String.Replace('é', 'e').Replace('è', 'e').Replace('ê', 'e').Replace('ë', 'e')
+                         .Replace('à', 'a').Replace('á', 'a').Replace('â', 'a').Replace('ä', 'a')
+                         .Replace('ç', 'c').Replace('î', 'i').Replace('ï', 'i').Replace('ô', 'o')
+                         .Replace('ó', 'o').Replace('ö', 'o').Replace('ù', 'u').Replace('û', 'u')
+                         .Replace('ü', 'u').Replace('ÿ', 'y').Replace('œ', 'oe').Replace('æ', 'ae')
+    } else {
+        Write-Host "L'entrée n'est pas une chaîne valide."
+    }
 
     return $String
 }
