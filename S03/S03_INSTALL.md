@@ -256,8 +256,8 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 ## Configuration réseau de la VM Ubuntu
 
 ### Étapes de configuration :
-1.**Allumer une VM Ubuntu** 
-2. Configurer son réseau interne sur `172.24.0.4/24` pour qu'elle se connecte avec  le serveur GLPI.
+1. **Allumer une VM Ubuntu**  
+2. Configurer son réseau interne sur `172.24.0.4/24` pour qu'elle puisse se connecter avec le serveur GLPI
 
 ### Vérification de la connectivité :
 
