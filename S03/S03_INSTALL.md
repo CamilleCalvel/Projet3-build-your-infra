@@ -2,15 +2,15 @@
 
 ## 👉 Préparation de la VM
 
-1. **Téléchargez l'image ISO d'Ubuntu Server** :  
+1. **Téléchargez l'image ISO Debian Server** :  
    - Vous pouvez télécharger une image ISO depuis [le site officiel Debian](https://www.debian.org/distrib/).
 
-2. **Préparez une VM** avec un hyperviseur comme **VirtualBox** selon les caractéristiques suivantes :  
+2. **Préparez une VM** avec un hyperviseur comme **Proxmox** selon les caractéristiques suivantes :  
    - **RAM** : Au minimum **2 Go**.  
    - **Disque dur** : Au minimum **20 Go**.  
    - **Réseau** : Configurez une carte réseau en mode **bridge** pour permettre à la VM <br>
  de communiquer avec votre réseau local et la box Internet.<br> Et configurer une autre carte réseau en **interne**. 
-   - **Image ISO** : Insérez l'image ISO d'Ubuntu Server dans la VM.
+   - **Image ISO** : Insérez l'image ISO Debian 12 dans la VM.
 
 ---
 
@@ -41,13 +41,13 @@
 14. **Confirmation de l'action** : Selectionnez `Oui` puis choisissez `Continuer`.
 15. **Outils de Gestion des Paquets** : Analyser d'autres supports cliquez `Non`.
 16. **Choix du miroir** : Choissisez le plus proche de votre pays puis `Continuer`.
-14. **D'après votre sélection du pays** : Pour nous `deb.debian.org`, cliquez sur `Continué`.
-15. **Paramètres du mandataire** : Laissez vide et appuyer sur `Continué`
+14. **D'après votre sélection du pays** : Pour nous `deb.debian.org`, cliquez sur `Continuer`.
+15. **Paramètres du mandataire** : Laissez vide et appuyer sur `Continuer`
 16. **Participé à l'étude** : Cliquez `Non`.
-17. **Sélection des logiciels** : A votre bon vouloir puis `Continué`
+17. **Sélection des logiciels** : A votre bon vouloir puis `Continuer`
 18. **Démarrage GRUB** : Cliquez `Oui`
-19. **Choix Disque** : Choisissez Le disque partionné dans les étapes précédentes puis `Continué`
-20. **Terminer l'installation** : Appuyer sur `Continué`.<br>
+19. **Choix Disque** : Choisissez Le disque partionné dans les étapes précédentes puis `Continuer`
+20. **Terminer l'installation** : Appuyer sur `Continuer`.<br>
 <p align="center">
 <i>Le serveur va démarrer et votre installation est FINITO.</i>
 </p>
