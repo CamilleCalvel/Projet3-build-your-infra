@@ -96,8 +96,8 @@ Bloquer un compte après un certain nombre de tentatives de connexion échouées
 `Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy`
 **3. Configurer les paramètres suivants** :  
 - Account lockout threshold : 5 tentatives.  
-- Account lockout duration : 15 minutes.  
-- Reset account lockout counter after : 15 minutes.
+- Account lockout duration : 10 minutes.  
+- Reset account lockout counter after : 10 minutes.
   
 ## :four: GPO - Gestion de Windows Update
 >**Objectif** :
