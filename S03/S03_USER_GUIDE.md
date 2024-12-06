@@ -5,7 +5,7 @@ Utilisation de la Console de Gestion des Stratégies de Groupe (GPMC).
 Les ressources nécessaires (image pour le fond d'écran, configuration de plan d'alimentation).  
 ---
 ## :one: GPO - Configuration d’un Fond d’écran  
->Objectif :  
+>**Objectif **:  
 Définir un fond d’écran unique et uniforme pour tous les utilisateurs d’une OU.  
 
 ## Étapes :  
@@ -24,7 +24,7 @@ Définir un fond d’écran unique et uniforme pour tous les utilisateurs d’un
 ### 4. Configurer le fond d’écran :  
 
 - Naviguer jusqu’à :  
-_Configuration utilisateur > Stratégies > Modèles d'administration > Bureau > Fond d'écran._
+`Configuration utilisateur > Stratégies > Modèles d'administration > Bureau > Fond d'écran.`
 - Double-cliquer sur Fond d'écran de bureau.  
 - Activer la stratégie :  
 • Cocher Activé.  
@@ -45,7 +45,7 @@ En cas de problème, vérifier que l’accès réseau est correctement configur�
 
 ---
 ## :two: GPO - Gestion de l’Alimentation
->Objectif :  
+>**Objectif** :  
 Uniformiser les paramètres d’alimentation des postes clients (mise en veille, arrêt de l’écran, etc.).
 ---
 
@@ -64,7 +64,7 @@ Uniformiser les paramètres d’alimentation des postes clients (mise en veille,
 ### 4. Configurer les options d’alimentation :  
 
 - Naviguer jusqu’à :  
-_Configuration ordinateur > Préférences > Panneau de configuration > Options d’alimentation._  
+`Configuration ordinateur > Préférences > Panneau de configuration > Options d’alimentation.`  
 ### 5. Créer une configuration :  
 
 - Clic droit dans la fenêtre -> Nouveau -> Options d’alimentation.  
@@ -84,4 +84,72 @@ _Configuration ordinateur > Préférences > Panneau de configuration > Options d
 - Exécuter gpupdate /force sur un poste client.  
 - Vérifier que les options d’alimentation sont appliquées dans "Options d’alimentation" sur le poste.  
 ### Note :  
-Cette GPO s’applique généralement à des ordinateurs (et non aux utilisateurs).
+Cette GPO s’applique généralement à des ordinateurs (et non aux utilisateurs).  
+
+
+
+
+
+###################################################################
+
+
+
+
+ 
+## :three: GPO - Verrouillage de compte (blocage après plusieurs erreurs de mot de passe)  
+>**Objectif** :  
+Bloquer un compte après un certain nombre de tentatives de connexion échouées.  
+---
+**Configuration**:  
+**1. Ouvrir la console GPMC (gpmc.msc).**  
+**2. Naviguer vers** :  
+`Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy`
+**3. Configurer les paramètres suivants** :  
+- Account lockout threshold : 5 tentatives.  
+- Account lockout duration : 15 minutes.  
+- Reset account lockout counter after : 15 minutes.
+  
+## :four: GPO - Gestion de Windows Update
+>**Objectif** :
+Configurer les mises à jour automatiques pour un horaire spécifique.
+---
+**Configuration** :  
+**1. Naviguer vers** :  
+`Computer Configuration > Policies > Administrative Templates > Windows Components > Windows Update` 
+**2. Configurer les stratégies suivantes**:  
+- **Configure Automatic Updates** : Activer, sélectionner "Auto download and schedule the install".  
+- **Specify active hours** : Activer, définir les heures où aucune mise à jour ne sera installée (ex. 9h-17h).  
+- **No auto-restart with logged-on users** : Activer.
+  
+## :four: GPO - Blocage de l'accès à la base de registre  
+>**Objectif** :  
+Empêcher les utilisateurs d'accéder et de modifier le registre.
+---  
+**Configuration** :  
+**1. Naviguer vers** :  
+`User Configuration > Policies > Administrative Templates > System`
+**2. Activer la stratégie** :  
+- Prevent access to registry editing tools.
+
+## :five: GPO - Mot de passe compliqué  
+>**Objectif** :  
+Exiger des mots de passe complexes pour les utilisateurs.
+---  
+**Configuration** :  
+**1. Naviguer vers** :  
+`Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Password Policy`  
+**2. Configurer les paramètres suivants** :  
+- Enforce password history : 5 mots de passe.  
+- Minimum password length : 8 caractères.  
+- Password must meet complexity requirements : Activer.  
+
+## :six: GPO - Blocage complet au panneau de configuration  
+>**Objectif** :  
+Interdire l'accès au panneau de configuration.
+---  
+
+**Configuration** :  
+**1. Naviguer vers** :  
+`User Configuration > Policies > Administrative Templates > Control Panel`  
+**2. Activer la stratégie** :  
+- Prohibit access to Control Panel and PC settings.  
