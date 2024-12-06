@@ -1,4 +1,17 @@
 
+##################################################################################
+#                                                                                #
+#  Script pour modifier un fichier xlsx en CSV                                   #
+#                                                                                #
+##################################################################################
+
+
+
+##################################################################################
+# VERIFICATIONS
+##################################################################################
+
+
 # Vérifier si le module ImportExcel est installé
 $moduleName = "ImportExcel"
 
@@ -9,18 +22,6 @@ if ($isAdmin) {
     # Applique la politique d'exécution Unrestricted uniquement pour les administrateurs
     Set-ExecutionPolicy Unrestricted -Scope Process
 }
-
-# Fonction pour supprimer les caractères spéciaux (accents et autres)
-function Remove-StringSpecialCharacters
-{
-    param ([string]$String)
-
-    # Convertir les caractères spéciaux en ASCII en utilisant l'encodage cyrillique
-    $String = [Text.Encoding]::ASCII.GetString([Text.Encoding]::GetEncoding("Cyrillic").GetBytes($String))
-
-    return $String
-}
-
 
 # Vérification de l'existence du module
 if (-not (Get-Module -ListAvailable -Name $moduleName)) {
@@ -37,6 +38,43 @@ if (-not (Get-Module -ListAvailable -Name $moduleName)) {
 } else {
     Write-Host "$moduleName est déjà installé."
 }
+
+##################################################################################
+# FONCTIONS
+##################################################################################
+
+# Fonction pour supprimer les caractères spéciaux (accents et autres)
+function Remove-StringSpecialCharacters
+{
+    param ([string]$String)
+
+    # Convertir les caractères spéciaux en ASCII en utilisant l'encodage cyrillique
+    $String = [Text.Encoding]::ASCII.GetString([Text.Encoding]::GetEncoding("Cyrillic").GetBytes($String))
+
+    return $String
+}
+
+
+# Fonction pour supprimer uniquement les accents dans les titres
+function Remove-AccentsFromHeaders
+{
+    param ([string]$String)
+
+    # Remplacer les caractères accentués par leur version non accentuée
+    $String = $String.Replace('é', 'e').Replace('è', 'e').Replace('ê', 'e').Replace('ë', 'e')
+                     .Replace('à', 'a').Replace('á', 'a').Replace('â', 'a').Replace('ä', 'a')
+                     .Replace('ç', 'c').Replace('î', 'i').Replace('ï', 'i').Replace('ô', 'o')
+                     .Replace('ó', 'o').Replace('ö', 'o').Replace('ù', 'u').Replace('û', 'u')
+                     .Replace('ü', 'u').Replace('ÿ', 'y').Replace('œ', 'oe').Replace('æ', 'ae')
+
+    return $String
+}
+
+
+##################################################################################
+# CONVERSION
+##################################################################################
+
 
 # Demander à l'utilisateur de saisir le chemin du fichier source .xlsx
 $sourceFile = Read-Host "Veuillez entrer le chemin complet du fichier source .xlsx"
@@ -65,8 +103,14 @@ try {
     exit 1
 }
 
-# Traiter les données pour supprimer les caractères spéciaux dans chaque cellule
-$excelData = $excelData | ForEach-Object {
+# Séparer la première ligne (les titres des colonnes)
+$headers = $excelData[0]
+
+# Traiter la première ligne d'en-tête (supprimer les accents dans les titres)
+$headers = $headers | ForEach-Object { Remove-AccentsFromHeaders $_ }
+
+# Traiter les autres lignes de données (supprimer les caractères spéciaux dans les valeurs)
+$data = $excelData[1..($excelData.Count - 1)] | ForEach-Object {
     $newObj = $_ | Select-Object *
     $newObj.PSObject.Properties.GetEnumerator() | ForEach-Object {
         if ($_.Value -is [string]) {
@@ -76,9 +120,12 @@ $excelData = $excelData | ForEach-Object {
     $newObj
 }
 
+# Réintégrer la première ligne (headers)
+$data = @($headers) + $data
+
 # Exporter les données au format CSV
 try {
-    $excelData | Export-Csv -Path $csvFile -NoTypeInformation
+    $data | Export-Csv -Path $csvFile -NoTypeInformation
     Write-Host "Conversion en CSV réussie ! Le fichier a été enregistré à : $csvFile"
 } catch {
     Write-Host "Erreur lors de l'exportation en CSV : $_"
