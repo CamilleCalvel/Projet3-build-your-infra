@@ -9,7 +9,7 @@
    - **RAM** : Au minimum **2 Go**.  
    - **Disque dur** : Au minimum **20 Go**.  
    - **Réseau** : Configurez une carte réseau en mode **bridge** pour permettre à la VM <br>
- de communiquer avec votre réseau local et la box Internet.<br> Et configurer une autre carte réseau en **interne**. 
+ de communiquer avec votre réseau local et la box Internet.<br> Et configurer une autre carte réseau en **interne** : *`172.24.0.4/24`*. 
    - **Image ISO** : Insérez l'image ISO Debian 12 dans la VM.
 
 ---
@@ -153,7 +153,7 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 
    - **Nom de la base de données** : `ekoglpidb`  
    - **Utilisateur** : `ekoadmin`  
-   - **Mot de passe** : `motDePasse` (à remplacer par votre propre mot de passe sécurisé)
+   - **Mot de passe** : `MotDePasse` (à remplacer par votre propre mot de passe sécurisé)
 
 ---
 # Configuration Apache pour GLPI
@@ -168,9 +168,9 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 
 2. Ajoutez la configuration suivante **avant** la ligne `</VirtualHost>` :
    ```apache
-   Alias /glpi /var/www/glpi
+   Alias /glpi /var/www/glpi.ekoloclast.local
 
-   <Directory /var/www/glpi>
+   <Directory /var/www/glpi.ekoloclast.local>
        Options Indexes FollowSymLinks
        AllowOverride All
        Require all granted
@@ -183,6 +183,7 @@ Appliquez les modifications en redémarrant le service Apache :
 sudo systemctl restart apache2
 ```
 ---
+
 ## Récupération des sources GLPI
 
 1. Téléchargez les sources de GLPI :
@@ -247,27 +248,20 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 
 ---
 
-## Configuration réseau de la VM GLPI
+## Configuration réseau de la VM Ubuntu
 
 ### Étapes de configuration :
-
-1. **Arrêtez la VM GLPI.**
-2. Dans votre hyperviseur, modifiez la carte réseau :  
-   - Passez-la de **bridge** à **réseau interne**.
-3. **Redémarrez la VM.**
-
-### Mise en place d'une adresse IP fixe :
-
-1. Choisissez une adresse IP et un masque de sous-réseau approprié. Configurez-les sur votre VM Ubuntu Server.
-2. Redémarrez la connexion réseau pour appliquer les changements.
+1.**Eteindre le serbeur GLPI.**
+2.**Allumer une VM Ubuntu** et configurer son réseau interne sur `172.24.0.4/24` pour qu'elle se connacte sur le serveur GLPI.
+3.**Redémarrez la VM SRVLIN-03 (Serveur Debian).**
 
 ### Vérification de la connectivité :
 
-1. Démarrez une autre VM sur le même réseau (client Windows ou Linux).
-2. Testez la connexion avec une commande **ping** vers la VM Ubuntu Server :
+1. Démarrez la VM sur le même réseau (Ubuntu).
+2. Testez la connexion avec une commande **ping** vers la VM Debian Server :
 
    ```bash
-   ping [adresse IP de la VM GLPI]
+   ping 172.24.0.4
    ```
 
    Si le ping fonctionne, la configuration réseau est correcte.
@@ -301,8 +295,8 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 
 1. Renseignez les informations suivantes dans le formulaire :
    - **Serveur SQL** : `127.0.0.1`
-   - **Utilisateur** : `glpi`
-   - **Mot de passe** : Le mot de passe défini précédemment pour le compte `glpi`.
+   - **Utilisateur** : `ekoadmin`
+   - **Mot de passe** : `se référer à la convention de nommage de mots de passe`.
 
 2. Cliquez sur `Continuer` pour finaliser la configuration.
 
