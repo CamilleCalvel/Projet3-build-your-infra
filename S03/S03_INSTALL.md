@@ -324,7 +324,7 @@ Votre plan d'installation et de configuration de GLPI semble complet et fonction
 
 ### **Vérification préalable**
 
-1. **ISO d'Ubuntu Server** : Assurez-vous d'utiliser une version compatible avec les prérequis de GLPI (actuellement, Ubuntu 20.04 ou 22.04 LTS sont préférés).
+1. **ISO Debian Server** : Assurez-vous d'utiliser une version compatible avec les prérequis de GLPI.
 2. **Réseau** :
    - Mode **bridge** pour télécharger les mises à jour et les fichiers nécessaires.
    - Puis mode **réseau interne** pour accéder depuis une machine client.
