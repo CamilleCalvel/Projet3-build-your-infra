@@ -58,7 +58,7 @@
 
 1. Une fois l'installation terminée, choisissez `Redémarrer maintenant`.
 2. Retirez l'ISO de la VM et appuyez sur `Entrée`.
-3. Connectez-vous avec le compte **wilder** et le mot de passe défini (le clavier est maintenant en **AZERTY**).
+3. Connectez-vous avec le compte **utilisateur** et le mot de passe défini (le clavier est maintenant en **AZERTY**).
 4. Vérifiez la configuration réseau avec la commande suivante :
 
 ```
@@ -168,7 +168,11 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 
 2. Ajoutez la configuration suivante **avant** la ligne `</VirtualHost>` :
    ```apache
-   Alias /glpi /var/www/glpi.ekoloclast.local
+
+     Alias /glpi /var/www/glpi
+   DocumentRoot /var/www/glpi.ekoloclast.local
+
+ 
 
    <Directory /var/www/glpi.ekoloclast.local>
        Options Indexes FollowSymLinks
