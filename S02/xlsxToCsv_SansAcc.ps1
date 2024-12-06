@@ -146,14 +146,17 @@ $data = $excelData[1..($excelData.Count - 1)] | ForEach-Object {
     $newObj
 }
 
-# Réintégrer les en-têtes dans les données
+# Création de l'objet avec les en-têtes traités et réintégration des données
 $finalData = @()
-$finalData += [PSCustomObject]@{ 
-    for ($i = 0; $i -lt $headers.Count; $i++) {
-        $header = $headers[$i]
-        $finalData[0].PSObject.Properties.Add($header, $excelData[0][$i])
-    }
+
+# Ajouter les en-têtes sous forme d'objet au finalData
+$headerObj = New-Object PSObject
+for ($i = 0; $i -lt $headers.Count; $i++) {
+    $headerObj | Add-Member -MemberType NoteProperty -Name $headers[$i] -Value $headers[$i]
 }
+$finalData += $headerObj
+
+# Ajouter les lignes de données à finalData
 $finalData += $data
 
 # Exporter les données au format CSV
