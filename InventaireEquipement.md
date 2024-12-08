@@ -5,10 +5,10 @@
 
 | NomEquipInProxmox     | Hostname            | Adresse IP   | Adresse Réseau | Masque de sous réseau |
 |---------------------------|---------------------|--------------|----------------|-------------|
-| 1321 (G3-SRV-WIN22GUI)     | SRVWIN-01-WIN22GUI   | 172.24.0.1   | 172.24.0.0     | 255.255.255.0 |
+| 1321 (G3-SRV-WIN22GUI)     | SRVWIN-01-AD-DH   | 172.24.0.1   | 172.24.0.0     | 255.255.255.0 |
 | 1322 (G3-SRV-LINUX)       | SRVLIN-03-NOFONCTIONYET   | 172.24.0.3   | 172.24.0.0     | 255.255.255.0 |
 | ~~1323 (G3-SRV-WIN22Core)~~    | ~~SRVWIN-02-WIN22CORDC~~  | ~~172.24.0.2~~  | 172.24.0.0     | 255.255.255.0 |
-| 1325 (G3_SRV-WIN22Core)   | SRVWIN-04-WIN22CORDC    | 172.24.0.5   | 172.24.0.0     | 255.255.255.0 |
+| 1325 (G3_SRV-WIN22Core)   | SRVWIN-04-CORDC    | 172.24.0.5   | 172.24.0.0     | 255.255.255.0 |
 
 # Clients
 
