@@ -12,7 +12,7 @@
 
 | Départements | Nbr de Services | Nbr de personnes/Département | Etendu du réseau | adresses disponibles |
 | --- | --- | --- | --- | --- |
-| DMZ | 11 Serveurs | --- | 172.24.0.1 -> 172.24.0.20 | 20 |
+| Server | 11 Serveurs | --- | 172.24.0.1 -> 172.24.0.20 | 20 |
 | Direction Générale | --- | 8 Personnes |172.24.1.1 -> 172.24.1.30 | 30 |
 | Direction Financières | 3 Services | 14 Personnes | 172.24.2.1 -> 172.24.2.45 | 45 |
 | Direction Marketing | 4 Services | 22 Personnes | 172.24.3.1 -> 172.24.3.70 | 70 |
