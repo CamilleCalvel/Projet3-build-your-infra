@@ -5,6 +5,12 @@
 - Aller dans **authentification**.
 - Puis dans **annuaires**.
 - Enfin **ajouter un nouvel annuaire**.
+
+
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/glpi_ajout_ldap.png" alt="Pictures" width="800" >
+</p>
+
 - Entrer un nom d'annuaire, choisir serveur par défaut, et actif, rentrer l'adresse ip du serveur du **controlleur de domaine** et le port par défaut si on utilise pas TLS.
 
 ### Connection filter : 
@@ -98,6 +104,10 @@ Utilisateur : Administrator
 Attribut userPrincipalName : administrator@ekoloclast.local
 
 
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/annuaireldap_glpi_filled.png" alt="Pictures" width="800" >
+</p>
+
 ### Le synchronization field 
 
 Le synchronization fiedl rempli par objectGuid pointera sur un id unique peu importe si le nom utilisateur change (donc en cas de synchronisation).
@@ -105,5 +115,12 @@ Le synchronization fiedl rempli par objectGuid pointera sur un id unique peu imp
 
 Une fois rempli, cliquer sur Add.
 
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/apres_add_glpi.png" width="800" >
+</p>
+
 Tester dans Setup  > Authentification > Cliquer sur L'annuaire créé > Choisir Test
 
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/capture_glpiLdap_test.png" width="800" >
+</p>
