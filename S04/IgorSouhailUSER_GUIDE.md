@@ -23,6 +23,7 @@
 ---  
 
 <details><summary><h1>:two: Bloquer le trafic sortant de tous les VLANs vers le VLAN11 (contenant la DMZ)</h1></summary>  
+   
 - Se rendre sur PfSense -> Firewall -> Rules.  
 - Ajouter une nouvelle règle :  
   ```plaintext
