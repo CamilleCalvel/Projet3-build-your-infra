@@ -215,7 +215,7 @@ Tester dans Setup  > Authentification > Cliquer sur L'annuaire créé > Choisir 
 
 ---
 
-<details><summary><h1>:two: Créer un ticket client</h1></summary>  
+<details><summary><h1>:two: Création d'un nouveau ticket</h1></summary>  
   
 - Interface GLPI du client: Créer un ticket en cliquant sur le bouton **Create a Ticket**  
 <img src="https://github.com/user-attachments/assets/b2640eb4-fb43-4242-a72b-ed22f916a483" width="700">
