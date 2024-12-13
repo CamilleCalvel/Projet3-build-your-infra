@@ -1,12 +1,12 @@
-# Création d'un ticket via un compte Utilisateur de l'AD
-## 1. Connexion à glpi avec un compte utilisateur
+# :incoming_envelope: Création d'un ticket via un compte Utilisateur de l'AD
+## :one: Connexion à glpi avec un compte utilisateur
 - Renseigner:
   - Nom d'utilisateur: SamAccountName (prenom + nom) 
   - Mot de passe: Se reférer à la convention sur miro
   - LoginSource: Annuaire Ekoloclast
 <img src="https://github.com/user-attachments/assets/26721233-1dc0-427d-9944-7ccce9654c0e" width="700">
 
-## 2. Créer un ticket 
+## :two: Créer un ticket 
 - Interface GLPI du client: Créer un ticket en cliquant sur le bouton **Create a Ticket**  
 <img src="https://github.com/user-attachments/assets/b2640eb4-fb43-4242-a72b-ed22f916a483" width="700">
   
@@ -22,7 +22,7 @@
 - Une fenêtre s'affiche pour indiquant que le ticket a bien été crée 
 <img src="https://github.com/user-attachments/assets/8771b6cb-bdb7-4926-9f8a-dc08b8fe36c3" width="350">  
 
-## 3. Résolution du ticket par l'administrateur
+## :three: Résolution du ticket par l'administrateur
 - A partir du dashboard ou de l'onglet Assistance, sélectionner **Tickets**  
 <img src="https://github.com/user-attachments/assets/7c3c69bc-2b32-4842-8014-d749de5b0f3f" width="700">
 
