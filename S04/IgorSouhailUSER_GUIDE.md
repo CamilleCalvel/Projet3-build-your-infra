@@ -45,7 +45,8 @@
 
 ---  
 
-<details><summary><h1>:three: Autoriser le trafic sortant depuis VLAN12 vers Internet</h1></summary>
+<details><summary><h1>:three: Autoriser le trafic sortant depuis VLAN12 vers Internet</h1></summary>  
+  
 - Se rendre sur PfSense -> Firewall -> Rules.  
 - Ajouter une nouvelle règle :  
   ```plaintext
