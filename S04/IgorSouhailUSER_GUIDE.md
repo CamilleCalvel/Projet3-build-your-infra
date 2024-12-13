@@ -49,12 +49,12 @@
 - Se rendre sur PfSense -> Firewall -> Rules.  
 - Ajouter une nouvelle règle :  
   ```plaintext
-  Action : Pass
-  Interface : VLAN12
-  Protocol : Any
-  Source : VLAN12
-  Destination : Any
-  Description : Autoriser le trafic sortant depuis VLAN12 vers Internet
+  Action : Pass  
+  Interface : VLAN12  
+  Protocol : Any  
+  Source : VLAN12  
+  Destination : Any  
+  Description : Autoriser le trafic sortant depuis VLAN12 vers Internet  
   ```
 ![Part1-0](https://github.com/user-attachments/assets/04d26146-4c6d-4811-a0fe-f78e9c9c9fe9)  
   
