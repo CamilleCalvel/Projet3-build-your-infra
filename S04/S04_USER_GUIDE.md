@@ -1,4 +1,4 @@
-# Création de règles de pare-feu sur PfSense
+# 🛑 Création de règles de pare-feu sur PfSense
 
 <details><summary><h1>:one: Bloquer le trafic sortant de tous les VLANs vers le VLAN12 (contenant les serveurs)</h1></summary>
 
@@ -68,7 +68,7 @@
 
 ---
 
-# Mise en place de la synchronisation de l'annuaire LDAP avec GLPI
+# 🎧 Mise en place de la synchronisation de l'annuaire LDAP avec GLPI
 
 <details><summary><h1></h1></summary>
 
