@@ -1,4 +1,4 @@
-<details><summary><h1>:minidisc: Mise en place de RAID1
+<details><summary><h1>:minidisc: Mise en place de RAID1</h1></summary>  
 
 ## :one: Configuration matérielle et logicielle
   
@@ -39,5 +39,5 @@ Ci-dessous, un exemple du résultat final dans le Gestionnaire de disques :
 ![Capture d'écran - RAID1 terminé](https://github.com/user-attachments/assets/73ca108c-75de-4723-9a72-7a291db6f444)
 
 ---
-
+</details>
 
