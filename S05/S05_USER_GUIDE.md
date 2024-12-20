@@ -52,12 +52,12 @@ Voici un mode d'emploi qui détaille les étapes de la mise en place des plages 
   
 ➡️ Faire un clic droit sur `IPv4` -> `New Scope` :
   
+![NewScope](https://github.com/user-attachments/assets/494a2fde-9d4e-485c-b69c-a5655b01f65b)  
+  
+➡️ Cliquer sur `Next` jusqu'à arriver à la fenêtre `Scope Name` ci dessous :  
+
 ![NomScope](https://github.com/user-attachments/assets/44c6c381-bca8-496c-9144-9c9a6b1dd449)  
   
-➡️ Cliquer sur `Next` jusqu'à arriver à la fenêtre `Scope Name` ci dessous :
-   
-![NewScope](https://github.com/user-attachments/assets/494a2fde-9d4e-485c-b69c-a5655b01f65b)  
-
 ➡️ Une fois le nom choisi, cliquer sur `Next` pour définir la plage d'adresses IP :
   
 ![Range](https://github.com/user-attachments/assets/9d67ffaf-5dcc-4200-87fe-e67cd996144a)  
