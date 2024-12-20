@@ -46,9 +46,7 @@ Ci-dessous, un exemple du résultat final dans le Gestionnaire de disques :
 
 ---
 
-## LVM
 
-```apt-install lvm2```
 
 
 <details><summary><h1>:one: Mise en place de plages d'adresses IP sur DHCP</h1></summary>  
