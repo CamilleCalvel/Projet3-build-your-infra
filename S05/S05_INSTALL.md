@@ -1,4 +1,4 @@
-# :minidisc: Mise en place de RAID1
+<details><summary><h1>:minidisc: Mise en place de RAID1
 
 ## :one: Configuration matérielle et logicielle
   
