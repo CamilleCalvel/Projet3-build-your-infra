@@ -1,3 +1,6 @@
+# S05_USER_GUIDE.md
+---
+
 <details><summary><h1>:minidisc: Mise en place de RAID1</h1></summary>
 
 ## :one: Configuration matérielle et logicielle
@@ -93,4 +96,17 @@ Voici un mode d'emploi qui détaille les étapes de la mise en place des plages 
 
   
 ➡️ Cliquer sur `Next` jusqu'à terminer l'installation  
+</details>
+
+
+<details><summary><h1>🛑 Activer le DHCP Relay sur PfSense</h1></summary>
+
+Pour que le DHCP puisse attribuer une adresse IP en fonction du VLAN de chaque machine, il faut faire une rapide configuration sur PfSense.  
+
+- Se rendre sur `PfSense` -> `Services` -> `DHCP Relay`
+- Cocher la case `Enable DHCP Relay` et séléctionner chaque VLAN
+
+![DCHPRelay](https://github.com/user-attachments/assets/a91eeae1-da8b-4bda-a1ed-085046216acb)  
+
+Une fois cette configuration sur PfSense effectuée, chaque PC se connectant sur un VLAN obtiendra automatiquement, via DHCP, une adresse IP en fonction du département associé au VLAN.
 </details>
