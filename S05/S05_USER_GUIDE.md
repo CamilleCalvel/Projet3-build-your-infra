@@ -1,6 +1,6 @@
-# :minidisc: Mise en place de RAID1
+<details><summary><h1>:minidisc: Mise en place de RAID1</h1></summary>
 
-<details><summary><h1>:one:Configuration matérielle et logicielle</h1></summary>
+## :one: Configuration matérielle et logicielle
   
 - **Système d'exploitation :** Windows Server 2022  
 - **Nom de la machine :** `SRVWIN-01-AD-DH`  
@@ -9,11 +9,9 @@
   - **Disk 1** : Sauvegarde Active Directory (32 Go)
   - **Disk 2** : Volume vide (32 Go)
 
-</details>
-
 ---
 
-<details><summary><h1>:two:Étapes de création du RAID1</h1></summary>
+## :two: Étapes de création du RAID1
 
 1. **Ouvrir le Gestionnaire de disques** :
    - Utilisez la combinaison `Win + X` et sélectionnez **Gestion des disques**.
@@ -31,25 +29,19 @@
    - Attendez que la synchronisation entre les deux disques soit terminée.
    - Le processus peut être suivi via l'interface du Gestionnaire de disques.
 
-</details>
-
 ---
 
-<details><summary><h1>:three:Résultat attendu</h1></summary>
+## :three: Résultat attendu
 
 Une fois la configuration terminée, les deux disques seront en miroir (RAID1).  
 Ci-dessous, un exemple du résultat final dans le Gestionnaire de disques :
 
 ![Capture d'écran - RAID1 terminé](https://github.com/user-attachments/assets/73ca108c-75de-4723-9a72-7a291db6f444)
 
+---
 </details>
 
----
-
-
-
-
-<details><summary><h1>:one: Mise en place de plages d'adresses IP sur DHCP</h1></summary>  
+<details><summary><h1>📔 Mise en place de plages d'adresses IP sur DHCP</h1></summary>  
 
 Mettre en place une plage d'adresse IP permet d'attribuer automatiquement une adresse IP faisant partie du réseau sur lequel se trouve la machine concernée.  
 Voici un mode d'emploi qui détaille les étapes de la mise en place des plages d'adresses IP sur le serveur DHCP.  
