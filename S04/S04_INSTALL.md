@@ -52,14 +52,30 @@ Windows Server Backup est un outil puissant pour gérer les sauvegardes sur un s
    - Accédez à l'outil via :
      - **Menu Démarrer** > **Outils d'administration Windows** > **Sauvegarde de Windows Server**.
 
-2. **Configurer la sauvegarde planifiée :**
+2.1. **Configurer la sauvegarde planifiée :**
    - Dans le volet droit, sélectionnez **Sauvegarde planifiée**.
    - Suivez les étapes de l’assistant :
      - **Options de configuration** : Choisissez si vous souhaitez sauvegarder l'intégralité du serveur ou des volumes/fichiers spécifiques.
      - **Planification** : Définissez l'heure et la fréquence des sauvegardes.
      - **Cible de la sauvegarde** : Sélectionnez **Disque dur**.
        - Choisissez le disque ajouté comme cible.
+      
+2.2. **Configurer une sauvegarde:**
+   - Dans le volet droit, sélectionnez **Back Up Once**.
+   - Suivez les étapes de l’assistant :
+     - **Options de configuration** : Choisissez si vous souhaitez sauvegarder l'intégralité du serveur ou des volumes/fichiers spécifiques.
+     - **Cible de la sauvegarde** : Sélectionnez **Disque dur**.
+       - Choisissez le disque ajouté comme cible.
 
+3. **Copier la sauvegarde sur un client:**
+   - Sur le serveur
+      - Faire clic droit sur le dossier du Back Up > Properties
+      - Selectionner l'onglet **Sharing** > **Advanced Sharing...** > cochez la case **Share folder** et recuperer l'adresse de ce dossier partager qui s'affiche
+   - Sur le client
+      - Ouvrez un exploreur de fichiers > Dans le volet de gauche, selectionnez Network
+      - Dans la barre de recherche, mettre l'adresse du dossier partage où ce trouve le Back UP
+      - Copier/Coller le dossier sur le client
+        
 3. **Configurer les paramètres avancés :**
    - Si nécessaire, définissez des exclusions ou des paramètres VSS (Volume Shadow Copy Service) pour garantir la cohérence des sauvegardes.
 
