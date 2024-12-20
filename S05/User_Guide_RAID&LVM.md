@@ -1,6 +1,7 @@
-## Mise en place de RAID1
+# :minidisc: Mise en place de RAID1
 
-### Configuration matérielle et logicielle
+<details><summary><h1>:one:Configuration matérielle et logicielle</h1></summary>
+  
 - **Système d'exploitation :** Windows Server 2022  
 - **Nom de la machine :** `SRVWIN-01-AD-DH`  
 - **Disques disponibles :**
@@ -8,7 +9,11 @@
   - **Disk 1** : Sauvegarde Active Directory (32 Go)
   - **Disk 2** : Volume vide (32 Go)
 
-### Étapes de création du RAID1
+</details>
+
+---
+
+<details><summary><h1>:two:Étapes de création du RAID1</h1></summary>
 
 1. **Ouvrir le Gestionnaire de disques** :
    - Utilisez la combinaison `Win + X` et sélectionnez **Gestion des disques**.
@@ -26,13 +31,20 @@
    - Attendez que la synchronisation entre les deux disques soit terminée.
    - Le processus peut être suivi via l'interface du Gestionnaire de disques.
 
-## Résultat attendu
+</details>
+
+---
+
+<details><summary><h1>:three:Résultat attendu</h1></summary>
 
 Une fois la configuration terminée, les deux disques seront en miroir (RAID1).  
 Ci-dessous, un exemple du résultat final dans le Gestionnaire de disques :
 
 ![Capture d'écran - RAID1 terminé](https://github.com/user-attachments/assets/73ca108c-75de-4723-9a72-7a291db6f444)
 
+</details>
+
+---
 
 ## LVM
 
