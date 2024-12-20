@@ -44,7 +44,7 @@ Ci-dessous, un exemple du résultat final dans le Gestionnaire de disques :
 ---
 </details>
 
-<details><summary><h1>📔 Mise en place de plages d'adresses IP sur DHCP</h1></summary>  
+<details><summary><h1>📔 Configuration de plages d'adresses IP sur DHCP</h1></summary>  
 
 Mettre en place une plage d'adresse IP permet d'attribuer automatiquement une adresse IP faisant partie du réseau sur lequel se trouve la machine concernée.  
 Voici un mode d'emploi qui détaille les étapes de la mise en place des plages d'adresses IP sur le serveur DHCP.  
