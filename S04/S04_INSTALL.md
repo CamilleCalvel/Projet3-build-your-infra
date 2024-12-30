@@ -18,14 +18,16 @@ Windows Server Backup est un outil puissant pour gérer les sauvegardes sur un s
 2. **Ajouter le rôle ou la fonctionnalité :**
    - Cliquez sur **Gérer** > **Ajouter des rôles et fonctionnalités**.
    - Dans l'assistant, choisissez l'option **Installation basée sur un rôle ou une fonctionnalité**.
+![Capture d’écran 2024-12-12 110303](https://github.com/user-attachments/assets/81b3c7ed-6618-4ae7-a16e-a0870bf54a09)
 
 3. **Sélectionner la fonctionnalité Windows Server Backup :**
    - Parcourez les fonctionnalités disponibles et cochez **Windows Server Backup**.
    - Cliquez sur **Suivant**, puis sur **Installer**.
-
+![Capture d’écran 2024-12-12 110644](https://github.com/user-attachments/assets/eb4b6706-74dc-4806-9ebc-5532bd6e9308)
+![Capture d’écran 2024-12-12 110737](https://github.com/user-attachments/assets/054277e0-3296-4bb4-b8ce-2daf9b72d5b2)
 4. **Finaliser l'installation :**
    - Une fois l'installation terminée, redémarrez le serveur si nécessaire.
-
+![Capture d’écran 2024-12-12 111125](https://github.com/user-attachments/assets/7e2433d0-5c8a-42a9-9a87-8eb4f7f5657c)
 ---
 
 ## **2. Ajout d’un disque dédié pour les sauvegardes**
