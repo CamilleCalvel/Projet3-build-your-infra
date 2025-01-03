@@ -30,7 +30,37 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
+**Objectifs Sprint 6**
+
+
+
+
+
+
 **Objectifs Sprint 5**
+- Objectifs primaires :
+  - Dossiers Partagés *(en cours sp 5)*
+    - Stockage des données sur un volume spécifique
+    - Sécurité de partage dossiers par groupe AD
+    - Mappage des lecteurs sur les clients, choisir entre 3 options
+    - Accès utilisateurs à dossiers individuels + dossier de service
+  - Sauvegarde *(en cours sp 5)*
+    -   Linux backup? (pour la db MariaDB?) - planifier les sauvegardes du Windows Backup
+  - Stockage avancé *(en cours sp 5)*
+    - Mise en place de LVM sur serveur Debian
+- Objectifs secondaires : 
+  - Mot de passe admin local - mise en place de LAPS
+    - Console de gestion sur un AD (GUI)
+    - Installation sur au moins 1 client (GPO ou script)
+  - Gestion des objets AD
+    - Déplacement automatique des ordinateurs dans bonnes OU via nom d'une machien et/ou valeur attribut AD
+    - Automatisation par scriptPS exécuté par tâche AT
+  - Sécurité d'accès - Restrictions d'utilisation
+    - Restrictions pour les utilisateurs standards, les admins + gestion d'exceptions
+- Objectifs optionnels :
+  - SSH Linux
+  - GPO (date d'ancien sprint )
+  - Télémétrie
 
 
 **Objectifs Sprint 4**
