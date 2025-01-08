@@ -63,3 +63,13 @@ mysql> set global log_bin_trust_function_creators = 0;
 mysql> quit;
 ````
 
+Edition du fichier de configuration de la BD du serveur Zabbix dans /etc/zabbix/zabbix_server.conf :
+
+````
+DBPassword=a                # Mot de passe de l'utilisateur ekoadmin
+DBHost=localhost            # Nom de l'hôte ou IP du serveur MySQL
+DBName=zabbix               # Nom de la base de données Zabbix
+DBUser=ekoadmin             # Utilisateur pour se connecter à la base de données
+````
+
+
