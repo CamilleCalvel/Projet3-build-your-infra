@@ -64,6 +64,7 @@ mysql> quit;
 ````
 
 Edition du fichier de configuration de la BD du serveur Zabbix dans /etc/zabbix/zabbix_server.conf :
+(Attention en situation de production, mauvaise pratique de laisser un mdp de base de données en clair, plutôt opter pour des solutions de chiffrement(installation supplémentaire))
 
 ````
 DBPassword=a                # Mot de passe de l'utilisateur ekoadmin
