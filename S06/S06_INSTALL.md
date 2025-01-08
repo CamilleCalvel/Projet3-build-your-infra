@@ -84,4 +84,63 @@ systemctl restart zabbix-server zabbix-agent nginx php8.2-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.2-fpm
 ````
 
+Étape 3 - Configuration de Zabbix depuis la WUI
+
+Depuis un client tape l'adresse de ton serveur dans un navigateur en ajoutant le port d'écoute : donc dans notre cas 172.24.0.7:8080
+
+
+<p align="center">
+<img src="" alt="Pictures" width="800" >
+</p>
+
+  A partir des boutons Next step, à toi de configurer ton serveur. Quelques indications... Tu devras renseigner entre autres :
+
+  Le mdp de ta base de donnée
+  Le nom de ton serveur Zabbix
+  le fuseau horaire du serveur (UTC+1 si t'es à Paris et UTC+3 si t'es en Arménie au hasard hein)
+
+<p align="center">
+<img src="" alt="Pictures" width="800" >
+</p>
+
+## Installation et configuration de l'Agent Zabbix
+
+Télécharger l'agent depuis https://www.zabbix.com/download_agents
+Lancer l'installation de l'agent sur ton client Windows 10.
+préciser l'adresse IP du serveur Zabbix dans le champ **Zabbix server IP/DNS:**
+
+Pour installer l'agent, il faut les autorisations de l'administrateur de l'AD pour notre client.
+
+<p align="center">
+<img src="" alt="Pictures" width="800" >
+</p>
+
+## Ajout d'un hôte et création d'un groupe
+
+Pour ta 1ère connexion sur la WUI tu utiliseras les identifiants par défaut :
+
+Utilisateur : Admin
+Mot de passe : zabbix
+
+
+Création de groupes d'hôtes :
+
+Dans le menu Data collection/Host groups :
+Crée un groupe d'hôtes sous Windows en cliquant sur le bouton Create host group.
+On ajoute les hotes windows et les linux servers en tant que groupes
+
+dans notre cas, on ajoute notre machine nommée CLIWIN-02-ADM (hostname) , on lui accorde le "windows hosts" en host groups.
+Rentrer l'adresse de l'agent.
+
+
+Application du template pour la supervision des hôtes Windows :
+
+Dans le menu Data collection/Hosts :
+Clique sur le client.
+Dans le champ Templates, clique sur le bouton Select.
+Dans le champ Template group, clique sur le bouton Select.
+Choisis Template.
+Coche dans la liste le modèle Windows by Zabbix agent puis clique sur Select.
+Clique sur le bouton Update.
+
 
