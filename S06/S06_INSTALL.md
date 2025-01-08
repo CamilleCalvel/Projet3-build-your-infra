@@ -73,4 +73,26 @@ DBName=zabbix               # Nom de la base de données Zabbix
 DBUser=ekoadmin             # Utilisateur pour se connecter à la base de données
 ````
 
+Configuration de PHP pour accéder au frontend dans /etc/zabbix/nginx.conf : (ET NON CAR IL NOUS FAUT UN DOSSIER CONF APACHE 
+````
+listen 8080;
+server_name 172.16.0.3;
+````
+
+Démarrage du server et des processus de l'agent :
+
+````
+systemctl restart zabbix-server zabbix-agent nginx php8.2-fpm
+systemctl enable zabbix-server zabbix-agent nginx php8.2-fpm
+````
+
+ET LA ! PATATRAS !
+On a pas installé nginx ! Mais heureusement peut être que les manip ne sont pas très différentes. 
+
+````
+(sudo apt remove zabbix-nginx-conf)
+apt install zabbix-apache-conf
+````
+
+
 
