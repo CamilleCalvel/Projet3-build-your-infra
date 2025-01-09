@@ -1,24 +1,46 @@
+# Nouvelles installations sprint 6
 
-# Zabbix (brouillon , à remettre en forme
+## Installation du Serveur Zabbix
 
-Installation du dépôt de Zabbix dans le système :
-```
+Supervision de l'état du réseau, intégrité des machines et notifications email. *(Installation sur VM dédiée)*
+
+---
+
+## I. Installer l'environnement serveur de Zabbix
+
+### 1. Installation du dépôt de Zabbix
+
+```bash
 wget https://repo.zabbix.com/zabbix/7.2/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.2+debian12_all.deb
 dpkg -i zabbix-release_latest_7.2+debian12_all.deb
+```
 
-```
-Mise à jour de la liste des paquets et upgrade éventuel :
-```
+### 2. Mise à jour et installation des paquets nécessaires
+
+```bash
 apt update && apt upgrade -y
-```
-Installation de Zabbix server, du frontend, et de l'agent :
-```
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
 ```
 
-capture écran pour dire okay on a le serveur mariaDB installé
+---
 
+## II. Configuration et installation des dépendances
+
+### 1. Installation du SGBD
+
+```bash
+apt install mariadb-server
 ```
+
+### 2. Vérification du SGBD
+
+```bash
+systemctl status mysql
+```
+
+### 3. Configuration de la base de données
+
+```sql
 mysql -uroot -p
 password
 mysql> create database zabbix character set utf8mb4 collate utf8mb4_bin;
@@ -28,119 +50,171 @@ mysql> set global log_bin_trust_function_creators = 1;
 mysql> quit;
 ```
 
-Lors de la connexion au serveur msql on constate que n'importe quel mdp fonctionne. L'accès au serveur est ouvert avec notre login unix en root
+> ⚠️ Lors de la connexion au serveur MySQL, n'importe quel mot de passe fonctionne car l'accès est ouvert avec notre login Unix en root.
 
+### 4. Importation du schéma et des données
 
-Importation du schéma et des données :
-
-
-
-```
+```bash
 zcat /usr/share/zabbix/sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
 ```
 
-zcat est une commande qui permet de décompresser et d'afficher le contenu d'un fichier .gz sans le décompresser sur disque.
-Elle décompresse le fichier server.sql.gz contenant les instructions SQL pour configurer Zabbix.
-Elle envoie ces instructions directement vers la base de données MySQL/MariaDB zabbix en utilisant l'utilisateur zabbix.
-Elle assure que la connexion utilise le jeu de caractères utf8mb4 pour une meilleure compatibilité avec les caractères Unicode.
+> `zcat` permet de décompresser et d'afficher le contenu d'un fichier `.gz` sans le décompresser sur disque.
 
-Pour vérifier le succès de cette commande 
+#### Vérification de l'importation
 
-````
-mysql -u ekoadmin -p zabbix
+```sql
+mysql -u <utilisateur> -p <nomDeLaDB>
 SHOW TABLES;
-````
-Si l'importation a réussi, vous verrez une liste de tables associées à Zabbix
+```
 
-Désactivation de la possibilité de modifier la configuration de la BD par des acteurs malveillants :
+Si l'importation a réussi, vous verrez une liste de tables associées à Zabbix.
 
-````
+### 5. Désactivation de la modification des configurations par des acteurs malveillants
+
+```sql
 mysql -uroot -p
 password
 mysql> set global log_bin_trust_function_creators = 0;
 mysql> quit;
-````
+```
 
-Edition du fichier de configuration de la BD du serveur Zabbix dans /etc/zabbix/zabbix_server.conf :
-(Attention en situation de production, mauvaise pratique de laisser un mdp de base de données en clair, plutôt opter pour des solutions de chiffrement(installation supplémentaire))
+### 6. Configuration du fichier `zabbix_server.conf`
 
-````
+> 📌 **En production, il est déconseillé de stocker un mot de passe en clair. Optez pour des solutions de chiffrement.**
+
+```ini
 DBPassword=a                # Mot de passe de l'utilisateur zabbix
 DBHost=localhost            # Nom de l'hôte ou IP du serveur MySQL
 DBName=zabbix               # Nom de la base de données Zabbix
-DBUser=zabbix             # Utilisateur pour se connecter à la base de données
-````
+DBUser=zabbix               # Utilisateur pour se connecter à la base de données
+```
 
-Configuration de PHP pour accéder au frontend dans /etc/zabbix/nginx.conf :
-````
+### 7. Configuration de PHP pour le frontend
+
+```nginx
 listen 8080;
 server_name 172.16.0.3;
-````
+```
 
-Démarrage du server et des processus de l'agent :
+### 8. Démarrage des services
 
-````
+```bash
 systemctl restart zabbix-server zabbix-agent nginx php8.2-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.2-fpm
-````
+```
 
-Étape 3 - Configuration de Zabbix depuis la WUI
+---
 
-Depuis un client tape l'adresse de ton serveur dans un navigateur en ajoutant le port d'écoute : donc dans notre cas 172.24.0.7:8080
+## III. Configuration de Zabbix depuis la WUI
+
+Depuis un client, accédez à l'interface web en tapant l'adresse du serveur dans un navigateur :
+
+```
+http://172.24.0.7:8080
+```
+
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_urlConnexion.png" alt="Pictures" width="600" >
+</p>
+
+
+À partir des boutons **Next step**, configurez votre serveur Zabbix :
+- Le mot de passe de la base de données
+- Le nom du serveur Zabbix
+- Le fuseau horaire du serveur
 
 
 <p align="center">
-<img src="" alt="Pictures" width="800" >
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_configServeur.png" alt="Pictures" width="600" >
 </p>
 
-  A partir des boutons Next step, à toi de configurer ton serveur. Quelques indications... Tu devras renseigner entre autres :
+---
 
-  Le mdp de ta base de donnée
-  Le nom de ton serveur Zabbix
-  le fuseau horaire du serveur (UTC+1 si t'es à Paris et UTC+3 si t'es en Arménie au hasard hein)
+## IV. Installation et configuration de l'Agent Zabbix
+
+1. **Télécharger l'agent** depuis : [https://www.zabbix.com/download_agents](https://www.zabbix.com/download_agents)
+2. **Lancer l'installation** de l'agent sur votre client Windows 10
+3. **Préciser l'adresse IP du serveur Zabbix** dans le champ :
+   - **Zabbix server IP/DNS**
+
+> ⚠️ Pour installer l'agent, il faut les autorisations de l'administrateur de l'Active Directory.
 
 <p align="center">
-<img src="" alt="Pictures" width="800" >
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_autorisationAdmin.png" alt="Pictures" width="400" >
 </p>
 
-## Installation et configuration de l'Agent Zabbix
+---
 
-Télécharger l'agent depuis https://www.zabbix.com/download_agents
-Lancer l'installation de l'agent sur ton client Windows 10.
-préciser l'adresse IP du serveur Zabbix dans le champ **Zabbix server IP/DNS:**
+## V. Ajout d'un hôte et création d'un groupe
 
-Pour installer l'agent, il faut les autorisations de l'administrateur de l'AD pour notre client.
+### 1. Connexion à l'interface Web
+
+Utiliser les identifiants par défaut :
+- **Utilisateur** : `Admin`
+- **Mot de passe** : `zabbix`
+
+### 2. Création de groupes d'hôtes
+
+📌 **Dans le menu :** `Data collection > Host groups`
+- Cliquez sur **Create host group**
 
 <p align="center">
-<img src="" alt="Pictures" width="800" >
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_createhostGroup.png" alt="Pictures" width="800" >
 </p>
 
-## Ajout d'un hôte et création d'un groupe
+- Ajoutez les groupes souhaités
+> Dans notre cas, nous souhaitons faire la distinction entre clients Windows et serveurs Windows, ces groupes existant déjà pour Linux
 
-Pour ta 1ère connexion sur la WUI tu utiliseras les identifiants par défaut :
+### 3. Ajout des hôtes
 
-Utilisateur : Admin
-Mot de passe : zabbix
+📌 **Dans le menu :** `Data collection > Hosts`
+- Cliquez sur **Create host**
 
-
-Création de groupes d'hôtes :
-
-Dans le menu Data collection/Host groups :
-Crée un groupe d'hôtes sous Windows en cliquant sur le bouton Create host group.
-On ajoute les hotes windows et les linux servers en tant que groupes
-
-dans notre cas, on ajoute notre machine nommée CLIWIN-02-ADM (hostname) , on lui accorde le "windows hosts" en host groups.
-Rentrer l'adresse de l'agent.
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_CreateHosts.png" alt="Pictures" width="800" >
+</p>
 
 
-Application du template pour la supervision des hôtes Windows :
+- Ajoutez l'étiquette du groupe souhaité pour que l'hôte soit assigné à ce groupe
 
-Dans le menu Data collection/Hosts :
-Clique sur le client.
-Dans le champ Templates, clique sur le bouton Select.
-Dans le champ Template group, clique sur le bouton Select.
-Choisis Template.
-Coche dans la liste le modèle Windows by Zabbix agent puis clique sur Select.
-Clique sur le bouton Update.
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_HostCreation2.png" alt="Pictures" width="800" >
+</p>
+
+> Exemple : ajout de la machine `CLIWIN-02-ADM` au groupe `Windows hosts`
+- Ajoutez l'interface Agent
+- Renseignez l'adresse IP de votre client
+
+---
+
+## VI. Configuration des alertes et des notifications
+
+### Application du template pour la supervision des hôtes Windows
+
+📌 **Dans le menu :** `Data collection > Hosts`
+
+1. Sélectionnez l'hote créé
+2. Dans le champ **Templates**, cliquez sur **Select**
+
+
+3. Dans le champ **Template group**, cliquez sur **Select**
+4. Choisissez **Template**
+5. **Cochez** `Windows by Zabbix agent`
+
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_AlerteNot_Template.png" alt="Pictures" width="400" >
+</p>
+
+6. Cliquez sur **Select**, puis **Update**
+
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_AlerteNot_update.png" alt="Pictures" width="700" >
+</p>
+
+
+
+
+
+
 
 
