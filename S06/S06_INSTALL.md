@@ -236,23 +236,22 @@ Dans le menu **"Data collection"** > **"Hosts"** :
 
 ### Paramétrage supplémentaire pour la réception d'alerte.
 
-#### Zou dans **"Alerts"** > **"Actions"** > **"Trigger actions"**
-
-- Puis cliquer sur **"Report problems to Zabbix administrators"**
-- Choisir l'onglet **"Operations"**
-- Dans l'encart **"operations"**, ajouter une operation (**Add**)
-- Dans le champ **"send to users"**, ajouter l'étiquette **"Admin"**
-- Dans le champ **"send to media type"**, choisir **"Zabbix_Email"** (en référence à l'appellation choisie pour la configuration mail du point 2)
-- Enfin choisir et définir un **custom message**.
-- Cliquer sur **"Add"** et ne pas oublier de **"Update"** dans la fenêtre parente.
-
-#### Ensuite, dans **"Users"** > **"Users"**
-
+- Zou dans **"Users"** > **"Users"**
 - Cliquer sur **"Admin"** et choisir l'onglet **"Media"** à droite de **"User"**
 - Dans l'encart **media**, cliquer sur **"Add"**
+
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_Users_Users.png" alt="Pictures" width="700" >
+</p>
+
 - Définir **type** = **"Zabbix_Email"**
 - Dans le champ **"send to"** choisir l'adresse email précédemment rentrée dans le **media type** en étape 2.
 - Cocher le niveau de **sévérité** de votre choix. Vérifier si c'est bien **"Enabled"**
+
+<p align="center">
+<img src="https://github.com/WildCodeSchool/TSSR-2409-VERT-P3-G3-build-your-infra/blob/main/Ressources/Pictures/ConfigureZBX/Zbx_levelseverite.png" alt="Pictures" width="700" >
+</p>
+
 - Cliquer sur **"Add"** et, de même, ne pas oublier de **"Update"**.
 
 Pour tester, déclencher l'alerte. Pour vérifier qu'elle a été déclenchée, se rendre dans **"Monitoring"** > **"Problems"** où devraient s'afficher les alertes déclenchées.
