@@ -213,6 +213,8 @@ Utiliser les identifiants par défaut :
 
 ### Configurer la notification avec une adresse mail
 
+https://www.youtube.com/watch?v=9DT7kR8fa0o
+
 ### Création d'une alerte spécifique liée à l'utilisation de notre RAM :
 
 Dans le menu **"Data collection"** > **"Hosts"** :
