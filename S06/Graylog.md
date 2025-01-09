@@ -150,6 +150,3 @@ Accédez à l'interface web via :
 ```
 http://<IP_DU_SERVEUR>:9000
 ```
-
-## 🏁 Conclusion
-Félicitations, vous avez installé Graylog ! Vous pouvez maintenant gérer vos logs de manière centralisée. 🎉
