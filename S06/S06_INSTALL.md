@@ -214,7 +214,68 @@ Utiliser les identifiants par défaut :
 
 
 
+point 2
+
+A toi Camille
 
 
+
+point 3
+
+   Création d'une alerte spécifique lié à l'utilisation de notre RAM :
+
+
+   Dans le menu Data collection/Hosts :
+   
+   Clique sur Items qui se trouve sur la ligne de ton client.
+   Dans le champ Name écris "memory utilization" puis tape entrée.
+   Clique sur Memory utilization puis sur le bouton Clone.
+   Donne un nom et une key à ton item pour le test (ex : Alerte RAM et AlerteRAM).
+   Clique sur Add.
+
+
+
+point 4
+
+
+
+   Configuration du déclencheur de l'alerte précédemment créée.
+
+   Dans le menu Data collection/Hosts :
+      Clique sur Triggers qui se trouve sur la ligne de ton client.
+      Clique sur le bouton Create trigger et donne lui un nom (ex : WindowsAlerteRam).
+      Clique sur Disaster et sur Add du champ Expression.
+      Sélectionne dans la liste ton item Alerte RAM.
+      Dans Result sélectionne >= puis la valeur qui va te permettre de déclencher l'alerte.
+      Clique sur Insert puis Add en bas de la fenêtre.
+
+L'after de l'étape 4 :
+
+
+📌 **Dans le menu :** `Data collection > Hosts`
+   4.1 
+   Zou dans "Alerts" > " Actions" > "Trigger actions"
+   Puis cliquer sur "Report problems to Zabbix administrators"
+   Choisir l'onglet "Operations"
+   Dans l'encart "operations", ajouter une operation (Add)
+   Dans le champ "send to users", ajouter l'étiquette "Admin"
+   Dans le champ "send to media type", choisir "Zabbix_Email" (en référence à l'appelation choisie pour la configuration mail du point 2)
+   Enfin choisir et définir un custom message.
+   Cliquer sur "Add" et pas oublier de "Update" dans la fenêtre parente.
+
+   4.2
+   Ensuite, dans "Users" > "Users"
+   Cliquer sur "Admin" et choisir l'onglet "Media" à droite de "User"
+   Dans l'encart media, cliquer sur "Add"
+   Définir type = "Zabbix_Email"
+   Dans le champ "send to" choisir l'adresse email précédemment rentrée dans le media type en étape 2.
+   Cocher le niveau de sévérité de votre choix. Vérifier si c'est bien "Enabled"
+   Cliquer sur "Add" et , de même, ne pas oublier de "Update".
+
+Pour tester, déclencher l'alerte. Pour vérifier qu'elle a été déclenchée, se rendre dans "Monitoring" > "Problems" où devraient s'afficher les alertes déclenchées.
+Enfin, se rendre dans la boite mail concernée et vérifier que le mail d'alerte a bien été reçu, puis après un retour à la normale, vérifier également la réception d'un mail indiquant la résolution de problème.
+
+
+   
 
 
