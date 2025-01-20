@@ -42,7 +42,26 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 - Objectifs optionnels :
 ---
 **Objectifs Sprint 6**
-- Objectifs primaires :
+- **Objectifs primaires :**
+  - Active Directory :
+    - Nouveau fichier RH pour les utilisateurs de l'entreprise
+      -  Intégration des nouveaux utilisateurs
+      - Modifications de certaines informations
+      - Fourniture d'un fichier S06_Ekoloclast.xlsx :
+        - Le département "R&D" change de nom et devient "Recherche et
+          Innovation"
+        - Le service "Formation" fait désormais partie du Département "DSI"
+      - Pour le département "Services Généraux" :
+        - Il devient le département "Gestion des biens"
+        - La fonction de Jean-Pascal Millith devient "Responsable
+        Département Gestion des biens"
+      - Pour le service "Santé et sécurité au travail" :
+        - Le service change de nom et devient "QHSE"
+        - La fonction des techniciens HSE devient "Technicien QHSE"
+        - Une nouvelle responsable, Sandra Lorient, vient d’être
+        recrutée pour gérer ce service
+      - Quelques mariages et divorces ont eu lieu dans l'entreprise.
+      Traiter les changements de nom.
   - JOURNALISATION - Mise en place d'une gestion des logs centralisée
     - Utilisation de [Graylog](https://github.com/Graylog2/graylog2-server)
     - Mise en production :
@@ -54,19 +73,21 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
           1. Installation sur VM/CT dédié
           2. Supervision des éléments de l'infrastructure (actuels et à venir)
           3. Mise en place de dashboard
-- Objectifs secondaires :
+- **Objectifs secondaires :**
+   - SUPERVISION :
+      - Surveillance du pare-feu pfsense
+        1. Mise en place de dashboard
+        2. Ajout et modification de widget    
+- **Objectifs optionnels :**
   - JOURNALISATION - Mise en place d'une journalisation des scripts PowerShell
     1. Les logs seront construit pour pouvoir être lu par l'un des systèmes
     suivants :
         - Observateur d’événements Windows
         - Logiciel [CMTRACE](https://www.tech2tech.fr/cmtrace-lire-vos-fichiers-logs-facilement/)
-
     2. Modifier ou ajouter cette gestion de logs dans les scripts PowerShell
     utilisés (actuels et à venir)
     3. Utiliser un répertoire spécifique pour les logs (à définir)
     4. Un seul log par script
-  - SUPERVISION      
-- Objectifs optionnels :
 ---
 **Objectifs Sprint 5**
 - Objectifs primaires :
