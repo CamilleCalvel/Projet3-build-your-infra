@@ -37,9 +37,28 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 - Objectifs optionnels :
 ---
 **Objectifs Sprint 7**
-- Objectifs primaires :
-- Objectifs secondaires : 
-- Objectifs optionnels :
+- **Objectifs primaires :**
+  - MESSAGERIE : Mettre en place un serveur de messagerie
+      - [Postfix](https://www.postfix.org/) associé à [Dovecot](https://www.dovecot.org/)
+      - Installation sur VM/CT dédié
+      - Communication en interne (au sein de l'entreprise, quel que soit le site)
+  - SÉCURITÉ : Mettre en place un serveur de gestion de mot de passe
+      [Bitwarden](https://bitwarden.com/fr-fr/download/)
+- **Objectifs secondaires :**
+  - MESSAGERIE :
+    - Connexion cliente via client de messagerie local (à choisir par le
+    groupe de projet)
+    - Accès aux mail par webmail
+  - SÉCURITÉ :
+     - Installation sur VM déjà existante, ou CT dédié
+     - Connexion en web pour l'administration et l'utilisation de la solution
+- **Objectifs optionnels :**
+  - MESSAGERIE :
+    1. Communication avec l’extérieur de l'entreprise (optionnel)
+    2. Boites mails liées aux comptes utilisateurs AD (optionnel)
+  - GESTION DE PROJET - Installation d'un suivi sur serveur local
+    1. Utilisation de la solution [RedMine](https://www.redmine.org/)
+    2. Installation sur VM dédiée ou déjà existante, ou CT dédié 
 ---
 **Objectifs Sprint 6**
 - **Objectifs primaires :**
