@@ -58,14 +58,14 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
   - JOURNALISATION - Mise en place d'une journalisation des scripts PowerShell
     1. Les logs seront construit pour pouvoir être lu par l'un des systèmes
     suivants :
-      1. Observateur d’événements Windows
-      2. Logiciel [CMTRACE](https://www.tech2tech.fr/cmtrace-lire-vos-fichiers-logs-facilement/)
+        - Observateur d’événements Windows
+        - Logiciel [CMTRACE](https://www.tech2tech.fr/cmtrace-lire-vos-fichiers-logs-facilement/)
 
     2. Modifier ou ajouter cette gestion de logs dans les scripts PowerShell
     utilisés (actuels et à venir)
     3. Utiliser un répertoire spécifique pour les logs (à définir)
     4. Un seul log par script
-      
+  - SUPERVISION      
 - Objectifs optionnels :
 ---
 **Objectifs Sprint 5**
