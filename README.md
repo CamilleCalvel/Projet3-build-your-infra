@@ -30,14 +30,44 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
 | **Semaine 8** | **************   | *************** | ***************  | *************** |*************** |  
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
-
+---
+²**Objectifs Sprint 8**
+- Objectifs primaires :
+- Objectifs secondaires : 
+- Objectifs optionnels :
+---
+**Objectifs Sprint 7**
+- Objectifs primaires :
+- Objectifs secondaires : 
+- Objectifs optionnels :
+---
 **Objectifs Sprint 6**
+- Objectifs primaires :
+  - JOURNALISATION - Mise en place d'une gestion des logs centralisée
+    - Utilisation de [Graylog](https://github.com/Graylog2/graylog2-server)
+    - Mise en production :
+      1. Installation sur VM (non-dédié) ou CT
+      2. Gestion des logs des serveurs
+  - SUPERVISION - Mise en place d'une supervision de l'infrastructure réseau
+    - Utilisation de [ZABBIX](https://www.zabbix.com/)
+      - Mise en production :
+          1. Installation sur VM/CT dédié
+          2. Supervision des éléments de l'infrastructure (actuels et à venir)
+          3. Mise en place de dashboard
+- Objectifs secondaires :
+  - JOURNALISATION - Mise en place d'une journalisation des scripts PowerShell
+    1. Les logs seront construit pour pouvoir être lu par l'un des systèmes
+    suivants :
+      1. Observateur d’événements Windows
+      2. Logiciel [CMTRACE](https://www.tech2tech.fr/cmtrace-lire-vos-fichiers-logs-facilement/)
 
-
-
-
-
-
+    2. Modifier ou ajouter cette gestion de logs dans les scripts PowerShell
+    utilisés (actuels et à venir)
+    3. Utiliser un répertoire spécifique pour les logs (à définir)
+    4. Un seul log par script
+      
+- Objectifs optionnels :
+---
 **Objectifs Sprint 5**
 - Objectifs primaires :
   - Dossiers Partagés *(en cours sp 5)*
@@ -62,8 +92,7 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
   - SSH Linux
   - GPO (date d'ancien sprint )
   - Télémétrie
-
-
+---
 **Objectifs Sprint 4**
 
 - Objectifs primaires :
@@ -75,7 +104,7 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
   - Ajouter les données utilisateurs sur l'AD
 - Objectifs secondaires :
   - GPO : 5 règles GPO standard
- 
+--- 
 **Objectifs Sprint 3**
 
 - Objectifs primaires :
@@ -96,7 +125,7 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
     - Automatiser Installation Glpi (script shell)
     - Automatiser Installation AD-DS (script powershell)
     - Assurer le connexion (SSh) entre les serveurs Windows et Debian
-
+---
 **Objectifs Sprint 2**   
 
 - Objectifs primaires : 
@@ -113,7 +142,7 @@ Notre objectif final de fin de projet est de mettre en place une nouvelle infras
   - Créer une VM serveur Linux Debian
   - Ajouter le serveur au Domain AD
   - Assurer la connexion (SSH) entre les serveurs Windows et le serveur Debian
-
+---
 **Objectifs Sprint 1**   
 
 Objectifs principales:  
