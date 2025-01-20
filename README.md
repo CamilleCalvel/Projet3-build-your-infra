@@ -62,8 +62,8 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 
 #### **🔵 Objectifs optionnels :**
 - **_MESSAGERIE :_**
-  1. Communication externe à l'entreprise.
-  2. Boîtes mails liées aux comptes utilisateurs AD.
+  - Communication externe à l'entreprise.
+  - Boîtes mails liées aux comptes utilisateurs AD.
 - **_GESTION DE PROJET :_**
   - Installation de [RedMine](https://www.redmine.org/) sur serveur local.
 
