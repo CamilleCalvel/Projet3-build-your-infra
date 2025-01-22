@@ -10,8 +10,10 @@
 | 1325 (G3_SRV-WIN22Core)   | SRVWIN-04-CORDC    | 172.24.0.5   | 172.24.0.0     | 255.255.255.0 |
 | 1328 (G3_SRVLIN-04-ZBX)   | SRVLIN-04-ZBX  | 172.24.0.7   | 172.24.0.0  | 255.255.255.0 |
 | 1329 (G3_SRVLIN-05-SMTP)   | SRVLIN-05-SMTP  | 172.24.0.8   | 172.24.0.0  | 255.255.255.0 |
-| 1330 (G3_SRVLIN-06-SMTP)   | SRVLIN-06-SMTP  | 172.24.0.?   | 172.24.0.0  | 255.255.255.0 |
+| 1330 (G3_SRVLIN-06-SMTP)   | SRVLIN-06-SMTP  | 172.24.0.9   | 172.24.0.0  | 255.255.255.0 |
 | 1331 (G3_SRVWIN-07-WSUS)   | SRVWIN-07-WSUS  | 172.24.0.10   | 172.24.0.0  | 255.255.255.0 |
+
+> le serveur 06-SMTP n'est pas finalisé, c'est toujours la tentative d'un SMPT avec iRedMail en suivant l'atelier
 
 
 # Clients
