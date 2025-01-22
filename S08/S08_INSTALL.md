@@ -62,6 +62,10 @@ Cliquer sur **Run Rules** puis sur **Apply** et **OK**
 -----------------------------------------------------------------------------
 !! BROUILLON !! ET CONSEILS DE CHATGPT EN ATTENDANT LA SYNCHRONISATION
 
+> d'après d'autres requêtes auprès de l'IA, il faut bien intégrer la machine WSUS dans l'AD avant de passer à la suite, ce qui semble logique pour la gestion des GPO.
+> Pour cela il faut renommer le nom du domaine de la machine WSUS (Settings > System > Advanced system settings )
+
+
 Lier les groupes WSUS à l'Active Directory (AD) pour gérer les mises à jour en fonction des Unités d'Organisation (OU) implique plusieurs étapes. Voici une explication claire et détaillée :
 
 ---
