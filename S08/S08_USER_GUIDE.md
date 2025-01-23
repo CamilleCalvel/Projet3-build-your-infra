@@ -12,7 +12,7 @@ Répartir les rôles FSMO entre plusieurs contrôleurs de domaine permet :
 
 ---
 
-## 🏷️ Les 5 rôles FSMO en détail
+### 🏷️ Les 5 rôles FSMO en détail
 
 Active Directory possède **5 rôles FSMO**, répartis comme suit :
 
