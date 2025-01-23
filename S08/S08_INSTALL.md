@@ -58,6 +58,20 @@ Dans l'onglet **Update Rules** , cocher **Default Automatic Approval Rule**
 Cliquer sur **Run Rules** puis sur **Apply** et **OK**
 
 
+
+> Avant d'appliquer des mises à jour à des OU, il faut répartir les machines dans les bons OU, du moins celles correspondant à Clients, Serveurs, Domaine Controller
+> Dans notre cas nous avons pour l'instant 2 domaines controllers : AD-DH et Core DC (potentiellement le serveur 09 CoreDC)
+> 1 Serveurs Windows : WSUS
+> 1 machine client : CLIWIN-04-Test(DSI)
+> Les réels noms des OU concernées pour les mise à jour WSUS : * pour les DC = Domain Controllers (dans ekoloclast). 
+Paris.ekoloclast > Ordinateurs > Windows-server-2022 = Servers
+Paris.ekoloclast > Utilisateurs = Clients
+
+
+
+Et finalement, ce tuto IT-connect en parle très bien : https://www.it-connect.fr/chapitres/lier-les-machines-du-domaine-active-directory-serveur-wsus/
+
+
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 !! BROUILLON !! ET CONSEILS DE CHATGPT EN ATTENDANT LA SYNCHRONISATION
