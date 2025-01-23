@@ -68,10 +68,21 @@ Paris.ekoloclast > Ordinateurs > Windows-server-2022 = Servers
 Paris.ekoloclast > Utilisateurs = Clients
 
 
-
-Et finalement, ce tuto IT-connect en parle très bien : https://www.it-connect.fr/chapitres/lier-les-machines-du-domaine-active-directory-serveur-wsus/
+Ce tuto IT-connect en parle très bien : https://www.it-connect.fr/chapitres/lier-les-machines-du-domaine-active-directory-serveur-wsus/
 
 Après suivi du mix Atelier-IT connect : Les GPO sont appliquées en synchronicité avec les groupes WSUS , on a pu faire vérification avec commandes PS sur un domain controller (alias le GUI AD-DH), cependant pas réussi à faire le gpupdate /force sur la machine client DSI/Test, il semble que celle-ci ne parvient pas à ping le WSUS.
+
+En résumé, ce qu'il reste à formuler comme étapes après les sync sur WSUS : 
+
+* paramétrer WSUS computers sur group policies
+* Créer 3 groupes de computers sur WSUS Clients, Servers et DC
+* Ajouter WSUS à l'AD
+* Ajouter WSUS dans les serveurs AD disponibles depuis le main server GUI AD-DH
+* Créer de nouvelles GPO avec les politiques Windows Update définies dans l'Atelier.
+* La politique Win Update appelée "Enable client-side targeting" doit renvoyer à chaque fois à un groupe spécifique de WSUS
+* Appliquer les GPO créés aux machines concernées considérées comme Clients, Servers, DC.
+* Vérifier que ces GPO sont opérationnelles en appliquant gpupdate /force sur ces quelques machines et récupérer les résultats.
+* On peut démontrer l'intérête des groupes WSUS en suivant la partie 4 de l'Atelier, sauf que dans notre cas nous avons coché tellement peu de Maj à synchroniser que nous n'en avons aucune apparaissant dans le panel Updates de WSUS. (Afin de limiter les pb d'espace).
 
 
 -----------------------------------------------------------------------------
