@@ -1,10 +1,8 @@
 <details><summary><h1> 👨‍🦲📂 Dossiers partagés individuels<h1></summary>  
-  
-# Mise en place de dossiers partagés  
-  
+    
 Pour mettre en place des dossiers partagés sur Windows Server, il faut que ce serveur soit promu contrôleur de domaine.  
   
-## :one: Création du dossier partagé individuel   
+# :one: Création du dossier partagé individuel   
   
 ➡️ Ouvrir l'explorateur de fichiers, créer un dossier `Partages` (qui va contenir nos trois dossiers `Individuels` `Département` et `Service` et y créer un sous dossier `Individuels`  
   
@@ -28,7 +26,7 @@ Pour mettre en place des dossiers partagés sur Windows Server, il faut que ce s
   
 ![image](https://github.com/user-attachments/assets/239fb5c6-3411-4039-8df6-889547745a5f)  
   
-## 2️⃣ Configuration des droits NTFS  
+# 2️⃣ Configuration des droits NTFS  
   
 ➡️ Toujours dans les propriétés du dossier, se rendre dans l'onglet `Security` puis cliquer sur `Advanced`  
   
@@ -46,7 +44,7 @@ Pour mettre en place des dossiers partagés sur Windows Server, il faut que ce s
   
 ➡️ Appliquer les changements et fermer la fenêtre  
   
-## 3️⃣ Création d'une GPO d'automatisation de création de dossiers individuels  
+# 3️⃣ Création d'une GPO d'automatisation de création de dossiers individuels  
   
 ➡️ Server Manager -> Tools -> Group Policy Management  
   
@@ -74,7 +72,7 @@ Pour mettre en place des dossiers partagés sur Windows Server, il faut que ce s
   
 ![image](https://github.com/user-attachments/assets/64b02ece-4a52-49e0-bd1d-5a19a854efcb)
   
-## 4️⃣ Création d'un raccourci sur le bureau [optionnel]  
+# 4️⃣ Création d'un raccourci sur le bureau [optionnel]  
   
 ➡️ `Shortcuts` -> `New > Shortcut`  
   
@@ -91,6 +89,74 @@ Pour mettre en place des dossiers partagés sur Windows Server, il faut que ce s
 ![image](https://github.com/user-attachments/assets/db001645-a159-40a4-a093-1a4715963b3d)
 
 </details>
+
+<details><summary><h1>Dossiers partagés par département<h1></summary>  
+  
+# :one: Création de groupes d'utilisateurs dans chaque département et services  
+  
+➡️ Dans `Active Directory Users and Computers`, se rendre au niveau des OU de nos départements  
+  
+➡️ Dans chaque département, créer un groupe et y entrer tous les utilisateurs du département, sans prendre en compte le service auquel ils sont affectés  
+  
+![image](https://github.com/user-attachments/assets/5b723a0e-d23b-4f2d-bb13-a34acc96ae5e)  
+  
+➡️ Répéter la même opération pour chaque service de chaque département  
+  
+![image](https://github.com/user-attachments/assets/783961fa-2e92-4e08-9e27-d35f3d18769f)  
+  
+➡️ Ensuite, répéter la même opération pour nos 10 départements ainsi que leurs services  
+  
+# :two: Création du dossier partagé par départements  
+  
+➡️ Ouvrir l'explorateur de fichiers, dans le dossier Partages, créer un dossier `Départements`  
+  
+➡️ Dans le dossier `Départements`, créer un dossier pour chacun de nos départements (10 au total)  
+  
+![image](https://github.com/user-attachments/assets/7180cd56-65c1-434b-81cc-374bde6304e9)  
+  
+## ❗ Répéter les opérations suivantes pour chacun des dossiers créés ❗  
+  
+➡️ Clic droit sur le dossier > `Properties` > `Sharing` > `Advanced Sharing...`  
+  
+➡️ Cocher la case `Share this folder`  
+  
+➡️ Ajouter un $ à la fin du nom du dossier puis cliquer sur `Permissions`  
+  
+➡️ Supprimer "Everyone" de la liste puis cliquer sur `Add`  
+  
+➡️ Ajouter `Administrator` et `UsersCOMM`(ici, on manipule le dossier du département COMM), puis leur donner un niveau de permissions en **Full Control**  
+  
+➡️ `Apply` > `OK`  
+  
+➡️ On voit désormais que le dossier est partagé, et son chemin est précisé  
+  
+![image](https://github.com/user-attachments/assets/df1d7c1c-4ae5-4007-a711-7fad122ca957)  
+  
+# :three: Configuration des droits NTFS  
+  
+➡️ Toujours dans les propriétés du dossier, se rendre dans l'onglet `Security` puis cliquer sur `Advanced`  
+  
+➡️ Cliquer sur `Disable inheritance` pour supprimer les permissions héritées et configurer nos permissions personnalisées  
+  
+➡️ Cliquer sur `Add` puis sur `Select a principal`  
+  
+➡️ Ajouter `CREATOR OWNER`, `Administrator`, `SYSTEM`, `UsersCOMM` et leur donner un contrôle total  
+  
+➡️ Appliquer les changements et fermer la fenêtre  
+  
+## :four: Création d'une GPO d'automatisation de création de dossiers de départements  
+  
+➡️ Server Manager -> Tools -> Group Policy Management  
+  
+➡️ User Configuration > Preferences > Windows Settings > Drive Maps  
+  
+➡️ Clic droit sur `Drive Maps` puis `New > Mapped Drive`  
+  
+
+
+
+ 
+
 
 
 
