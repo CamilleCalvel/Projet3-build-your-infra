@@ -71,6 +71,8 @@ Paris.ekoloclast > Utilisateurs = Clients
 
 Et finalement, ce tuto IT-connect en parle très bien : https://www.it-connect.fr/chapitres/lier-les-machines-du-domaine-active-directory-serveur-wsus/
 
+Après suivi du mix Atelier-IT connect : Les GPO sont appliquées en synchronicité avec les groupes WSUS , on a pu faire vérification avec commandes PS sur un domain controller (alias le GUI AD-DH), cependant pas réussi à faire le gpupdate /force sur la machine client DSI/Test, il semble que celle-ci ne parvient pas à ping le WSUS.
+
 
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
