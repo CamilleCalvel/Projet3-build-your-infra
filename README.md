@@ -27,7 +27,8 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 | **Semaine 5** | Scrum Master     | Technicien      | Product Owner    | Technicien      | Technicienne   |  
 | **Semaine 6** | Technicien       | Product Owner   | Technicienne     | Scrum Master    | Technicienne   |  
 | **Semaine 7** | Product Owner    | Technicien      | Technicienne     | Technicien      | Scrum Master   |  
-| **Semaine 8** | **************   | *************** | ***************  | *************** |*************** |
+| **Semaine 8** | Technicien       | Scrum Master    | Technicien       | Product owner   | Technicien     |
+| **Semaine 9** | **************   | *************** | ***************  | *************** |*************** |
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
@@ -37,7 +38,10 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 
 ### **🔁 Objectifs Sprint 8**
 - **Objectifs primaires :**
+    - Sécurité : Mise en place d’un serveur de gestion des mises à jour WSUS
+    - Partenariat avec Pharmgreen : Mise en place sur Pfsense d’un VPN site à site
 - **Objectifs secondaires :**
+  
 - **Objectifs optionnels :**
 
 ---
