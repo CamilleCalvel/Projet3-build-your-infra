@@ -1,4 +1,4 @@
-                                                                                                                                                                                                                                                # Configuration de la machine et déploiement de WSUS
+# Déploiement de WSUS
 
 ## Configurer la nouvelle machine
 
