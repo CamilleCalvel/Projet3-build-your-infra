@@ -41,8 +41,9 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
     - Sécurité : Mise en place d’un serveur de gestion des mises à jour WSUS
     - Partenariat avec Pharmgreen : Mise en place sur Pfsense d’un VPN site à site
 - **Objectifs secondaires :**
-  
-- **Objectifs optionnels :**
+    - Rôles FSMO : Mise en place d’un 3 ème DC et Répartitions des rôles FSMO entre les DC 
+    - Partenariat avec Pharmagreen : 
+    - Retard sur sprints passés : mise en place de partage de fichiers individuels  
 
 ---
 
