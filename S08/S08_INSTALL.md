@@ -74,6 +74,9 @@ Après suivi du mix Atelier-IT connect : Les GPO sont appliquées en synchronici
 
 En résumé, ce qu'il reste à formuler comme étapes après les sync sur WSUS : 
 
+
+File and Printer Sharing (echo request ICMPIPv+) dans InboundRules du Firewall
+
 * paramétrer WSUS computers sur group policies
 * Créer 3 groupes de computers sur WSUS Clients, Servers et DC
 * Ajouter WSUS à l'AD
