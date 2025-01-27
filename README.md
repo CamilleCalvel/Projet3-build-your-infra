@@ -28,13 +28,17 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 | **Semaine 6** | Technicien       | Product Owner   | Technicienne     | Scrum Master    | Technicienne   |  
 | **Semaine 7** | Product Owner    | Technicien      | Technicienne     | Technicien      | Scrum Master   |  
 | **Semaine 8** | Technicien       | Scrum Master    | Technicien       | Product owner   | Technicien     |
-| **Semaine 9** | **************   | *************** | ***************  | *************** |*************** |
+| **Semaine 9** | Technicien       | Technicien      | Scrum Master     | Technicien      | Product owner  |
 
 [Planification globale sur les différents sprints](https://miro.com/app/board/uXjVLDxuzTU=/)
 
 ---
 
 ## ⚙️ Objectifs par sprint
+
+### **🔁 Objectifs Sprint 9**
+- **Objectifs primaires :**
+- **Objectifs secondaires :**
 
 ### **🔁 Objectifs Sprint 8**
 - **Objectifs primaires :**
