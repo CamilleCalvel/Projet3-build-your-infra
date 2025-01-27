@@ -94,9 +94,7 @@ repadmin /syncall /AdeP
 
 ## :office: Architecture
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6d066ecc-eb3f-4284-a882-4455117414c9" alt="Architecture du VPN" width="700">
-</p>
+![VPN site à vite](https://github.com/user-attachments/assets/61c97ab9-cc9b-4beb-8c59-a6a57370a233)
 
 ---
 
