@@ -3,30 +3,30 @@
 
 # Serveurs
 
-| NomEquipInProxmox     | Hostname            | Adresse IP   | Adresse Réseau | Masque de sous réseau |
-|---------------------------|---------------------|--------------|----------------|-------------|
-| 1321 (G3-SRV-WIN22GUI)     | SRVWIN-01-AD-DH   | 172.24.0.1   | 172.24.0.0     | 255.255.255.0 |
-| 1322 (G3-SRV-LINUX)       | SRVLIN-03-NOFONCTIONYET   | 172.24.0.3   | 172.24.0.0     | 255.255.255.0 |
-| 1325 (G3_SRV-WIN22Core)   | SRVWIN-04-CORDC    | 172.24.0.5   | 172.24.0.0     | 255.255.255.0 |
-| 1328 (G3_SRVLIN-04-ZBX)   | SRVLIN-04-ZBX  | 172.24.0.7   | 172.24.0.0  | 255.255.255.0 |
-| 1329 (G3_SRVLIN-05-SMTP)   | SRVLIN-05-SMTP  | 172.24.0.8   | 172.24.0.0  | 255.255.255.0 |
-| 1330 (G3_SRVLIN-06-SMTP)   | SRVLIN-06-SMTP  | 172.24.0.9   | 172.24.0.0  | 255.255.255.0 |
-| 1331 (G3_SRVWIN-07-WSUS)   | SRVWIN-07-WSUS  | 172.24.0.10   | 172.24.0.0  | 255.255.255.0 |
-| 1332 (G3_SRVWIN-08-FILE-SHARE)   | SRVWIN-08-SHARE  | 172.24.0.11   | 172.24.0.0  | 255.255.255.0 |
-| 1333 (G3-SRVWINCore-09-DC) | SRVWIN-09-DC  | 172.24.0.12   | 172.24.0.0  | 255.255.255.0 |
-| 1334 (G3-SRVLIN-10-Web) | SRVWLIN-10-Web  | 172.24.11.1   | 172.24.0.0  | 255.255.255.0 |
-| 1335 (G3-SRVLIN-11-VOIP) | SRVWLIN-11-VOIP  | 172.24.0.13   | 172.24.0.0  | 255.255.255.0 |
+| NomEquipInProxmox     | Hostname            | Adresse IP   | Adresse Réseau | Masque de sous réseau | Vlan |
+|---------------------------|---------------------|--------------|----------------|-------------|------|
+| 1321 (G3-SRV-WIN22GUI)     | SRVWIN-01-AD-DH   | 172.24.0.1   | 172.24.0.0     | 255.255.255.0 | 12 |
+| 1322 (G3-SRV-LINUX)       | SRVLIN-03-NOFONCTIONYET   | 172.24.0.3   | 172.24.0.0     | 255.255.255.0 | 12 |
+| 1325 (G3_SRV-WIN22Core)   | SRVWIN-04-CORDC    | 172.24.0.5   | 172.24.0.0     | 255.255.255.0 | 12 |
+| 1328 (G3_SRVLIN-04-ZBX)   | SRVLIN-04-ZBX  | 172.24.0.7   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1329 (G3_SRVLIN-05-SMTP)   | SRVLIN-05-SMTP  | 172.24.0.8   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1330 (G3_SRVLIN-06-SMTP)   | SRVLIN-06-SMTP  | 172.24.0.9   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1331 (G3_SRVWIN-07-WSUS)   | SRVWIN-07-WSUS  | 172.24.0.10   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1332 (G3_SRVWIN-08-FILE-SHARE)   | SRVWIN-08-SHARE  | 172.24.0.11   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1333 (G3-SRVWINCore-09-DC) | SRVWIN-09-DC  | 172.24.0.12   | 172.24.0.0  | 255.255.255.0 | 12 | 
+| 1334 (G3-SRVLIN-10-Web) | SRVWLIN-10-Web  | 172.24.11.1   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1335 (G3-SRVLIN-11-VOIP) | SRVWLIN-11-VOIP  | 172.24.0.13   | 172.24.0.0  | 255.255.255.0 | 12 |
 > le serveur 06-SMTP n'est pas finalisé, c'est toujours la tentative d'un SMPT avec iRedMail en suivant l'atelier
 
 
 # Clients
 
-| NomEquipInProxmox     | Hostname            | Adresse IP   | Adresse Réseau | Masque de sous réseau |
-|---------------------------|---------------------|--------------|-------------|-------------|
-| 1324 (G3-CLI-UBU24)       | CLIUBU-01-ADM  | 172.24.0.4   | 172.24.0.0  | 255.255.255.0 |
-| 1323 (G3-CLI02-WIN-ADM)   | CLIWIN-02-ADM  | 172.24.0.2   | 172.24.0.0     | 255.255.255.0 |
-| 1326 (G3_CLI03-WIN-BKUP)   | CLIWIN-03-BKUP   | 172.24.0.6   | 172.24.0.0     | 255.255.255.0 |
-| 1327 (G3_CLI04-WIN-TEST)   | CLIWIN-04-DSI    | 172.24.7.1   | 172.24.0.0  | 255.255.255.0 |
+| NomEquipInProxmox     | Hostname            | Adresse IP   | Adresse Réseau | Masque de sous réseau | Vlan |
+|---------------------------|---------------------|--------------|-------------|-------------|------|
+| 1324 (G3-CLI-UBU24)       | CLIUBU-01-ADM  | 172.24.0.4   | 172.24.0.0  | 255.255.255.0 | 12 |
+| 1323 (G3-CLI02-WIN-ADM)   | CLIWIN-02-ADM  | 172.24.0.2   | 172.24.0.0     | 255.255.255.0 | 12 |
+| 1326 (G3_CLI03-WIN-BKUP)   | CLIWIN-03-BKUP   | 172.24.0.6   | 172.24.0.0     | 255.255.255.0 | 12 |
+| 1327 (G3_CLI04-WIN-TEST)   | CLIWIN-04-DSI    | 172.24.7.1   | 172.24.7.0  | 255.255.255.0 | 7 |
 
 
 # Switch
