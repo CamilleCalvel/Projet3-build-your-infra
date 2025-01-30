@@ -34,6 +34,11 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 
 ---
 
+## Plan du réseau au 30.01
+
+![proj3_SchReseau_30 01](https://github.com/user-attachments/assets/6f952a4f-cbb1-4cc1-9aa9-b23b187d96a5)
+
+
 ## ⚙️ Objectifs par sprint
 
 ### **🔁 Objectifs Sprint 9**
