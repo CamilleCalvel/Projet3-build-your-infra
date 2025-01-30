@@ -14,7 +14,7 @@
 | 1331 (G3_SRVWIN-07-WSUS)   | SRVWIN-07-WSUS  | 172.24.0.10   | 172.24.0.0  | 255.255.255.0 | 12 |
 | 1332 (G3_SRVWIN-08-FILE-SHARE)   | SRVWIN-08-SHARE  | 172.24.0.11   | 172.24.0.0  | 255.255.255.0 | 12 |
 | 1333 (G3-SRVWINCore-09-DC) | SRVWIN-09-DC  | 172.24.0.12   | 172.24.0.0  | 255.255.255.0 | 12 | 
-| 1334 (G3-SRVLIN-10-Web) | SRVWLIN-10-Web  | 172.24.11.1   | 172.24.11.0  | 255.255.255.0 | 11|
+| 1334 (G3-SRVLIN-10-Web) | SRVWLIN-10-Web  | 172.24.11.1   | 172.24.0.0  | 255.255.255.0 | 11|
 | 1335 (G3-SRVLIN-11-VOIP) | SRVWLIN-11-VOIP  | 172.24.0.13   | 172.24.0.0  | 255.255.255.0 | 12 |
 | 1336 (G3-SRVLIN-GUACAMOLE) | SRVWLIN-12-GUAC  | 172.24.11.2   | 172.24.0.0  | 255.255.255.0 | 11 |
 > le serveur 06-SMTP n'est pas finalisé, c'est toujours la tentative d'un SMPT avec iRedMail en suivant l'atelier
