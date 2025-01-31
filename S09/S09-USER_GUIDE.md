@@ -1,6 +1,6 @@
 # 👤Création d'utilisateurs et de lignes sur le serveur FreePBX
 
-Plan de mumérotation :
+Plan de numérotation :
 | Poste Client | Numéro de ligne | Nom | Mot de passe |
 |---------|--------|---------|---------|
 | CLIWIN-02-ADM | 80100 | Petra Rossi | Azerty1* |
