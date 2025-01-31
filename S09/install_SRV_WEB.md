@@ -206,7 +206,10 @@ Ensuite ajouter cette ligne à la fin du doc et le sauvegarder
 ```bash
 */2 * * * * /usr/bin/php /var/www/moodle/admin/cli/cron.php  >/dev/null
 ```
-
+Redémarrer Apache :
+```bash
+systemctl restart apache2
+```
 
 ---
 
