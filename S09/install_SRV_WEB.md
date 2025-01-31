@@ -69,7 +69,7 @@ Installe Apache, PHP 8.2, MariaDB, et les extensions PHP requises pour Moodle. L
 
 ## Étape 3 : Configuration du fichier `php.ini`
 
-Modifiez le fichier `/etc/php/8.2/apache2/php.ini` en ajoutant ou modifiant les entrées suivantes :
+Modifiez le fichier `/etc/php/8.2/apache2/php.ini` en ajoutant ou modifiant les entrées suivantes (Dans un 1er temps éviter les ajouts extensions=xxx.so, elles risques de faire doublon) :
 
 ```ini
 ; Désactivez les doublons si besoin :
