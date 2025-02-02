@@ -42,8 +42,20 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 ## ⚙️ Objectifs par sprint
 
 ### **🔁 Objectifs Sprint 9**
-- **Objectifs primaires :**
-- **Objectifs secondaires :**
+- **Objectifs primaires :**<br>
+  - Mise en place d’un serveur de téléphonie sur IP avec FreePBX
+
+- **Objectifs secondaires :**<br>
+  - Mettre en place un serveur web et hébergement de site
+
+- **Partenariat avec PharmGreen :** <br>
+  - Mise en place d’un serveur RDP
+
+- **Objectifs optionnels :** <br>
+  - Configuration de l’authentification LDAP/AD sur le serveur FreePBX<br>
+  - Rendre le site web accessible pour tout le monde depuis l'extérieur qui liste les étapes réalisées pour l’installation de Postfix<br>
+
+---
 
 ### **🔁 Objectifs Sprint 8**
 - **Objectifs primaires :**
