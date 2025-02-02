@@ -42,29 +42,29 @@ Notre objectif final est de mettre en place une nouvelle infrastructure réseau.
 ## ⚙️ Objectifs par sprint
 
 ### **🔁 Objectifs Sprint 9**
-- **Objectifs primaires :**<br>
+#### **🔑Objectifs primaires :** <br>
   - Mise en place d’un serveur de téléphonie sur IP avec FreePBX
 
-- **Objectifs secondaires :**<br>
+#### **🔒Objectifs secondaires :** <br>
   - Mettre en place un serveur web et hébergement de site
 
-- **Partenariat avec PharmGreen :** <br>
+#### **♻️Partenariat avec PharmGreen :** <br>
   - Mise en place d’un serveur RDP
 
-- **Objectifs optionnels :** <br>
+#### **🔵Objectifs optionnels :** <br>
   - Configuration de l’authentification LDAP/AD sur le serveur FreePBX<br>
   - Rendre le site web accessible pour tout le monde depuis l'extérieur qui liste les étapes réalisées pour l’installation de Postfix<br>
 
 ---
 
 ### **🔁 Objectifs Sprint 8**
-- **Objectifs primaires :**
-    - Sécurité : Mise en place d’un serveur de gestion des mises à jour WSUS
-    - Partenariat avec Pharmgreen : Mise en place sur Pfsense d’un VPN site à site
-- **Objectifs secondaires :**
-    - Rôles FSMO : Mise en place d’un 3 ème DC et Répartitions des rôles FSMO entre les DC 
-    - Partenariat avec Pharmagreen : 
-    - Retard sur sprints passés : mise en place de partage de fichiers individuels  
+#### **🔑 Objectifs primaires :**
+  - Sécurité : Mise en place d’un serveur de gestion des mises à jour WSUS
+  - Partenariat avec Pharmgreen : Mise en place sur Pfsense d’un VPN site à site
+#### **🔒 Objectifs secondaires :**
+  - Rôles FSMO : Mise en place d’un 3 ème DC et Répartitions des rôles FSMO entre les DC 
+  - Partenariat avec Pharmagreen : 
+  - Retard sur sprints passés : mise en place de partage de fichiers individuels  
 
 ---
 
