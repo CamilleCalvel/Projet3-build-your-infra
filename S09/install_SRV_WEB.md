@@ -205,8 +205,8 @@ Il s'agit d'un processus qui va périodiquement parcourir les bases de données 
 ```bash
 crontab -u www-data -e
 ```
-Choisir l'éditeur de fichier et tapper le numéro correspondant : 1 pour vim ou 2 pour nano
-Ensuite ajouter cette ligne à la fin du doc et le sauvegarder
+Choisir l'éditeur de fichier et tapper le numéro correspondant : 1 pour vim ou 2 pour nano.  
+Ensuite, ajouter cette ligne à la fin du doc et le sauvegarder
 
 ```bash
 */2 * * * * /usr/bin/php /var/www/moodle/admin/cli/cron.php  >/dev/null
