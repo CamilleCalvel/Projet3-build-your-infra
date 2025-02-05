@@ -128,3 +128,51 @@ sudo systemctl restart apache2
 3. - Une fois les différents champs complétés, cliquer sur **Ajouter un domaine**.
 
 
+
+
+    
+  
+  
+**NOTES SUITE TUTO**  
+  
+• Tuto https://stocke.be/blog/comment-creer-son-propre-serveur-mail-sous-debian-avec-postfix-et-dovecot/10 :  
+  
+➡️ étape "Conf de Postfix" :  
+  
+nano /etc/postfix/mysql-virtual.......domains.cf : password = Azerty1*  
+  
+nano /etc/postfix/mysql-virtual.......maps.cf : password = Azerty1*  
+  
+⚠️ Si problème : /etc/postfix/master.cf et supprimer le "y" sur la ligne "submission  -  -   -   - ... * "  
+  
+➡️ étape "Création d'un certificat SSL pour Postfix avec Certbot"  
+  
+Impossible de créer un certificat avec certbot car il ne prend pas en charge l'extension ".local"  
+  
+On a utilisé les commandes suivantes :  
+  
+service apache2 stop   
+  
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/server.key -out /etc/ssl/certs/server.crt  
+  
+service apache2 start  
+  
+Liste de questions :  
+  
+![image](https://github.com/user-attachments/assets/42305268-8c8f-4858-821b-2821b46f3906)  
+  
+➡️ étape "Configuration de Postfix pour utiliser le certificat SSL"  
+  
+Remplacer les lignes :  
+  
+- `smtpd_tls_cert_file=/etc/letsencrypt/live/exemple.be/fullchain.pem` avec `smtpd_tls_cert_file=/etc/ssl/private/server.key`  
+  
+- `smtpd_tls_key_file=/etc/letsencrypt/live/exemple.be/privkey.pem` avec `mtpd_tls_key_file=/etc/ssl/certs/server.crt`  
+  
+
+
+  
+  
+
+
+ 
