@@ -119,7 +119,7 @@ Redémarrez Apache :
 ```bash
 systemctl restart apache2
 ```
-Accédez ensuite à `http://localhost/phpinfo.php` depuis un navigateur.
+Accédez ensuite à `http://IP_Serveur_Web/phpinfo.php` depuis un navigateur.
 
 ---
 
@@ -128,6 +128,10 @@ Accédez ensuite à `http://localhost/phpinfo.php` depuis un navigateur.
 Définissez un mot de passe administrateur MariaDB :
 ```bash
 mariadb-admin -u root password "mySecurePassword"
+```
+Rentrez dans la base de données MariaDB avec root :
+```bash
+mysql -u root -p
 ```
 Créez une base de données pour Moodle :
 ```sql
@@ -201,6 +205,7 @@ Il s'agit d'un processus qui va périodiquement parcourir les bases de données 
 ```bash
 crontab -u www-data -e
 ```
+Choisir l'éditeur de fichier et tapper le numéro correspondant : 1 pour vim ou 2 pour nano
 Ensuite ajouter cette ligne à la fin du doc et le sauvegarder
 
 ```bash
