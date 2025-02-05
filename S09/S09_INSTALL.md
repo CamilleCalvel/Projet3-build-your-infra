@@ -6,7 +6,7 @@
   
 ➡️ Éditer le fichier `/etc/hosts` avec la commande `nano`  
   
-➡️ Ajouter après la ligne "10.0.0.2 debian" la ligne suivante : adresse.ip.du.serveur NomDuServeur (dans notre cas : `172.24.0.13 SRVLIN-11-VOIP`)  
+➡️ Modifier la ligne "10.0.0.2 debian" de la manière suivante : adresse.ip.du.serveur NomDuServeur (dans notre cas : `172.24.0.13 SRVLIN-11-VOIP`)  
   
 ![image](https://github.com/user-attachments/assets/985d9b30-3b0b-4f30-be2f-fe7bd7e3fd6d)  
   
