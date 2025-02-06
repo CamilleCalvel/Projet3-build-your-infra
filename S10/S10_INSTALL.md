@@ -37,7 +37,7 @@ sudo apt update && sudo apt upgrade -y
 #### Enregistrement A:
 
 - Clic droit sur votre domaine -> `Nouvel enregistrement...`
-- Choisir "Hôte (A)" et cliquer sur `Créer un enregistrement...`
+- Choisir `Hôte (A)` et cliquer sur `Créer un enregistrement...`
 - Dans `Nom`, entrer le nom d'hôte de votre serveur Iredmail (ici: mail)
 - Dans `Adresse IP`, entrer l'adresse IP de votre serveur iredmail
 - Cliquer sur `OK`  
