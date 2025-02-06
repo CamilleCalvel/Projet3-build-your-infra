@@ -81,10 +81,42 @@ bash iRedMail.sh
 - Taper sur y pour continuer l'installation 
 Il installera et configurera automatiquement les packages requis.
 
-⚙️  Configuration initiale d'iRedMail
-Depuis le client windows ou ubuntu
+## ⚙️  Configuration initiale d'iRedMail
 
-Accès à l'administration: https://mail.tssr.lab/iredadmin
-Connexion: Avec postmaster@tssr.lab et le mot de passe.
-Configuration:
-Vérifier la configuration du domaine existant : Nom de domaine, adresse
+Depuis un client windows ou ubuntu :
+
+- Accès à l'administration: https://mail.tssr.lab/iredadmin
+- Connexion: Avec postmaster@ekoloclast.local et le mot de passe.
+
+- Configuration:
+  - Vérifier la configuration du domaine existant : Nom de domaine, adresse
+
+## 🧑‍💻 Gestion des domaines et des comptes
+Cette étape vous permet de créer des comptes utilisateurs sur votre domaine.
+
+### Créer un compte utilisateur :
+
+- Cliquer sur le bouton "Ajouter" puis utilisateur.
+
+- Exemple de configuration :
+  - Email: utilisateur1@ekoloclast.local
+  - Password: Un mot de passe fort (au moins 8 caractères avec des lettres majuscules et minuscules, des chiffres et des symboles).
+  - Name: Utilisateur Un
+  - Quota: 1024 (quota de 1 Go)
+  - Active: Cochez la case pour activer le compte.
+  - Cliquez sur "Add" pour créer le compte utilisateur.
+
+![Capture d'écran 2025-02-06 121751](https://github.com/user-attachments/assets/1f209632-2b83-45be-b9c3-64fc92e257cb)
+
+## 📨 Accès à la messagerie via webmail
+
+Webmail: https://mail.ekoloclast.local/mail (Roundcube).
+
+- Se connecter avec un utilisateur
+  
+![Capture d'écran 2025-02-06 122714](https://github.com/user-attachments/assets/e3524584-d758-47bc-93fc-ed765c0241de)
+
+- Tester l'envoi de mail entre 2 utilisateurs du domain ekoloclast.local
+  
+![Capture d'écran 2025-02-06 123302](https://github.com/user-attachments/assets/7ceb2775-dc89-42ef-a5ca-d14e10f9f7e4)
+
