@@ -1,6 +1,6 @@
 # :wrench: Configuration d'une VM Debian
 
-## Configuration réseau
+## :arrow_right: Configuration réseau
 ```bash
 nano /etc/network/interfaces
 ```
@@ -16,7 +16,7 @@ nano /etc/network/interfaces
 - Exemple:
 <img src="https://github.com/user-attachments/assets/616af6b3-e61d-4317-9722-0f28590ec592" alt="Pictures" width="800" >
 
-## Configuration DNS
+## :arrow_right: Configuration DNS
 ```bash
 nano /etc/resolv.conf
 ```
@@ -24,14 +24,14 @@ nano /etc/resolv.conf
 - Exemple:  
 <img src="https://github.com/user-attachments/assets/123dd48d-3b9e-4545-a081-27f09311758f" alt="Pictures" width="800" >
 
-## Configuration nom d'hôte
+## :arrow_right: Configuration nom d'hôte
 ```bash
 nano /etc/hostname
 ```
 - Exemple:
 <img src="https://github.com/user-attachments/assets/5e70a0c1-27d3-481f-9ef2-2e9c8bce2adc" alt="Pictures" width="800" >  
 
-## Ajout à l'Active Directory
+## :arrow_right: Ajout à l'Active Directory
 
 - Joindre la machine Debian au domaine Active Directory (AD).  
 ```bash
@@ -54,11 +54,11 @@ realm list
 
 ---
 
-# 👉 Installation server GLPI
+# 🎫 Mise en place du service GLPI
 
-## Installation des prérequis
+## :cd: Installation des prérequis
 
-### Mise à jour des paquets
+### :one: Mise à jour des paquets
 
 Commencez par mettre à jour le système :
 
@@ -66,7 +66,7 @@ Commencez par mettre à jour le système :
 apt update && apt upgrade -y
 ```
 
-### Installation d'Apache
+### :two: Installation d'Apache
 
 1. Installez le serveur web Apache :
 
@@ -80,7 +80,7 @@ apt update && apt upgrade -y
    systemctl enable apache2
    ```
 
-### Installation de MariaDB
+### :three: Installation de MariaDB
 
 1. Installez la base de données **MariaDB** :
 
@@ -88,7 +88,7 @@ apt update && apt upgrade -y
    apt install mariadb-server -y
    ```
 
-### Installation des modules PHP
+### :four: Installation des modules PHP
 
 1. Installez PHP et son module Apache :
 
@@ -101,14 +101,13 @@ apt update && apt upgrade -y
    ```bash
    apt install php-{ldap,imap,apcu,xmlrpc,curl,common,gd,json,mbstring,mysql,xml,intl,zip,bz2}
    ```
-
-## Configuration de MariaDB
-
 Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environnement pour votre application (détails à ajouter selon la configuration précise à effectuer).
 
-# 👉 Configuration de la base de données et installation de GLPI
+---
 
-## Configuration de MariaDB
+## :pencil2: Configuration de la base de données et installation de GLPI
+
+### :one: Configuration de MariaDB
 
 1. Lancez le processus d'initialisation de la base de données avec la commande suivante :
 
@@ -140,9 +139,7 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    - **Utilisateur** : `glpi`  
    - **Mot de passe** : `MotDePasse` (à remplacer par votre propre mot de passe sécurisé)
 
----
-
-## Récupération des sources GLPI
+### :two: Récupération des sources GLPI
 
 1. Téléchargez les sources de GLPI :
 
@@ -172,11 +169,9 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    sudo chmod -R 775 /var/www/glpi.monNomDeDomaine/
    ```
 
----
+### :three: Configuration Apache pour GLPI
 
-## Configuration Apache pour GLPI
-
-### Étape 1 : Modifier le fichier de configuration
+#### Étape 1 : Modifier le fichier de configuration
 1. Ouvrez le fichier **000-default.conf** :
    ```bash
    sudo nano /etc/apache2/sites-available/000-default.conf
@@ -189,14 +184,13 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 
    ```
 
-### Étape 2 : Redémarrer Apache
+#### Étape 2 : Redémarrer Apache
 Appliquez les modifications en redémarrant le service Apache :
 ```bash
 sudo systemctl restart apache2
 ```
----
 
-## Configuration de PHP
+### :four: Configuration de PHP
 
 1. Éditez le fichier `php.ini` pour Apache :  
 
@@ -216,35 +210,15 @@ sudo systemctl restart apache2
 
 3. Enregistrez et fermez le fichier.
 
----
-
 GLPI est maintenant configuré pour être installé sur votre serveur. Passez à l'étape suivante pour compléter l'installation via l'interface web.
 
-# 👉 Installation de GLPI
+---
+
+## :floppy_disk: Installation de GLPI
 
 L'installation de GLPI se fait via un navigateur web à partir d'une autre machine sur le même réseau que votre serveur GLPI.
 
----
-
-## Configuration réseau de la VM Ubuntu
-
-### Étapes de configuration :
-1. **Allumer une VM Ubuntu**  
-2. Configurer son réseau interne sur `172.24.0.4/24` pour qu'elle puisse se connecter avec le serveur GLPI
-
-### Vérification de la connectivité :
-
-1. Testez la connexion avec une commande **ping** vers la VM Debian Server :
-
-   ```bash
-   ping 172.24.0.3
-   ```
-
-   Si le ping fonctionne, la configuration réseau est correcte.
-
----
-
-## Accès au serveur GLPI via un navigateur
+### :one: Accès au serveur GLPI via un navigateur
 
 1. Ouvrez un navigateur web sur la VM client.
 2. Saisissez l’adresse suivante dans la barre d’adresse :
@@ -253,11 +227,9 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
    http://[adresse IP du serveur GLPI]/glpi
    ```
 
----
+### :two: Configuration de GLPI via l’interface graphique
 
-## Configuration de GLPI via l’interface graphique
-
-### Étapes d’installation :
+#### Étapes d’installation :
 
 1. **Choisissez la langue** : Sélectionnez `Français`.
 2. **Acceptez la licence GPL** :  
@@ -265,9 +237,7 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
    - Cliquez sur `Installer`.
 3. **Vérifiez les prérequis** : Si tout est correct, cliquez sur `Continuer`.
 
----
-
-## Configuration de la base de données MariaDB
+### :three: Configuration de la base de données MariaDB
 
 1. Renseignez les informations suivantes dans le formulaire :
    - **Serveur SQL** : `127.0.0.1`
@@ -282,11 +252,9 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 
 ---
 
-# 👉 Vérifications si problème d'installation.
+## ✔️ Vérifications si problème d'installation.
 
 Votre plan d'installation et de configuration de GLPI semble complet et fonctionnel. Voici un récapitulatif des points clés à vérifier pour garantir que tout fonctionne comme prévu :
-
----
 
 ### **Vérification préalable**
 
@@ -294,8 +262,6 @@ Votre plan d'installation et de configuration de GLPI semble complet et fonction
 2. **Réseau** :
    - Mode **bridge** pour télécharger les mises à jour et les fichiers nécessaires.
    - Puis mode **réseau interne** pour accéder depuis une machine client.
-
----
 
 ### **Étapes critiques à valider**
 
@@ -333,8 +299,6 @@ Votre plan d'installation et de configuration de GLPI semble complet et fonction
      sudo systemctl restart apache2
      ```
 
----
-
 ###  **Vérification réseau**
 
 1. **Adresse IP fixe** :
@@ -354,8 +318,6 @@ Votre plan d'installation et de configuration de GLPI semble complet et fonction
      sudo ufw allow in "Apache Full"
      sudo ufw enable
      ```
-
----
 
 ### **Installation via l'interface GLPI**
 
