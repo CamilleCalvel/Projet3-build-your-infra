@@ -1,6 +1,45 @@
-# Préparation et Installation Debian 12 Server pour GLPI
+# Configuration d'une VM Debian
 
-# 👉 Configuration
+## Configuration réseau
+```bash
+nano /etc/network/interfaces
+```
+
+- IP dynamique:
+   -    
+- IP static:
+   -  iface nomdeinterface inet static
+   -  address .../...
+   -  gateway ...
+- Exemple:  
+
+## Configuration DNS
+```bash
+nano /etc/resolv.conf
+```
+
+- Exemple:  
+
+## Configuration nom d'hôte
+```bash
+nano /etc/hostname
+```
+
+- Exemple:
+  
+## Ajout à l'Active Directory
+
+- Joindre la machine Debian au domaine Active Directory (AD).  
+```bash
+apt install packagekit samba-common-bin sssd-tools sssd libnss-sss libpam-sss policykit-1 sssd ntpdate ntp realmd` 
+```
+- Modifier le fichier `resolv.conf` avec `nameserver Adresse IP du server DNS`, `nameserver 1.1.1.1 (opt)` et `search Nomdedomaine`
+
+- Se connecter au domaine avec la commande:
+```bash
+realm join --user=administrator/eur Nomdedomaine
+```
+# 👉 Installation server GLPI
 
 ## Installation des prérequis
 
