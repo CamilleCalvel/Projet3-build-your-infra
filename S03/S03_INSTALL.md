@@ -1,4 +1,4 @@
-# Configuration d'une VM Debian
+# :wrench: Configuration d'une VM Debian
 
 ## Configuration réseau
 ```bash
@@ -50,7 +50,7 @@ realm join --user=administrator/eur Nomdedomaine
 ```bash
 realm list
 ```
-<img src="https://github.com/user-attachments/assets/7201c038-fac5-4614-8adf-43a25b6e183c" alt="Pictures" width="800" > 
+<img src="https://github.com/user-attachments/assets/7201c038-fac5-4614-8adf-43a25b6e183c" alt="Pictures" width="300" > 
 
 ---
 
@@ -131,13 +131,13 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 
    ```sql
    CREATE DATABASE ekoglpidb CHARACTER SET utf8 COLLATE utf8_bin;
-   GRANT ALL PRIVILEGES ON ekoglpidb.* TO ekoadmin@localhost IDENTIFIED BY 'motDePasse';
+   GRANT ALL PRIVILEGES ON ekoglpidb.* TO glpi@localhost IDENTIFIED BY 'motDePasse';
    FLUSH PRIVILEGES;
    QUIT;
    ```
 
    - **Nom de la base de données** : `ekoglpidb`  
-   - **Utilisateur** : `ekoadmin`  
+   - **Utilisateur** : `glpi`  
    - **Mot de passe** : `MotDePasse` (à remplacer par votre propre mot de passe sécurisé)
 
 ---
@@ -147,7 +147,7 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 1. Téléchargez les sources de GLPI :
 
    ```bash
-   wget https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.10.tgz
+   wget https://github.com/glpi-project/glpi/releases/download/10.0.10/glpi-10.0.10.tgz
    ```
 
 2. Créez un répertoire pour héberger GLPI :
@@ -201,7 +201,7 @@ sudo systemctl restart apache2
 1. Éditez le fichier `php.ini` pour Apache :  
 
    ```bash
-   sudo nano /etc/php/8.1/apache2/php.ini
+   sudo nano /etc/php/8.2/apache2/php.ini
    ```
 
 2. Modifiez ou ajoutez les paramètres suivants :  
@@ -276,17 +276,10 @@ L'installation de GLPI se fait via un navigateur web à partir d'une autre machi
 
 2. Cliquez sur `Continuer` pour finaliser la configuration.
 
-GLPI est maintenant prêt à être utilisé. Accédez à l'interface utilisateur et connectez-vous avec les identifiants par défaut.
+3. GLPI est maintenant prêt à être utilisé. Accédez à l'interface utilisateur et connectez-vous avec les identifiants par défaut.
+   - **Admin** : `glpi`
+   - **Mot de passe** : `glpi`
 
----
----
----
----
----
----
----
----
----
 ---
 
 # 👉 Vérifications si problème d'installation.
@@ -380,15 +373,3 @@ Votre plan d'installation et de configuration de GLPI semble complet et fonction
      echo 'Connexion réussie à MariaDB';
      ?>
      ```
-
----
-
-### **Validation finale**
-
-1. Accédez à l'interface de connexion GLPI après l'installation.
-2. Connectez-vous avec les identifiants par défaut :
-   - **Admin** : `glpi`
-   - **Mot de passe** : `glpi`
-
----
- 😊
