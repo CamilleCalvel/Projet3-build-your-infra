@@ -4,29 +4,33 @@
 ```bash
 nano /etc/network/interfaces
 ```
-
 - IP dynamique:
-   -    
+   - allow-hotplug nomdeinterface
+   - iface nomdeinterface inet dhcp
+     
 - IP static:
-   -  iface nomdeinterface inet static
-   -  address .../...
-   -  gateway ...
-- Exemple:  
+   - allow-hotplug nomdeinterface
+   - iface nomdeinterface inet static
+   - address x.x.x.x/x
+   - gateway x.x.x.x
+- Exemple:
+<img src="https://github.com/user-attachments/assets/616af6b3-e61d-4317-9722-0f28590ec592" alt="Pictures" width="800" >
 
 ## Configuration DNS
 ```bash
 nano /etc/resolv.conf
 ```
-
+- Renseigner l'adresse IP de votre serveur DNS
 - Exemple:  
+<img src="https://github.com/user-attachments/assets/123dd48d-3b9e-4545-a081-27f09311758f" alt="Pictures" width="800" >
 
 ## Configuration nom d'hôte
 ```bash
 nano /etc/hostname
 ```
-
 - Exemple:
-  
+<img src="https://github.com/user-attachments/assets/5e70a0c1-27d3-481f-9ef2-2e9c8bce2adc" alt="Pictures" width="800" >  
+
 ## Ajout à l'Active Directory
 
 - Joindre la machine Debian au domaine Active Directory (AD).  
@@ -34,11 +38,22 @@ nano /etc/hostname
 apt install packagekit samba-common-bin sssd-tools sssd libnss-sss libpam-sss policykit-1 sssd ntpdate ntp realmd` 
 ```
 - Modifier le fichier `resolv.conf` avec `nameserver Adresse IP du server DNS`, `nameserver 1.1.1.1 (opt)` et `search Nomdedomaine`
+Exemple:
+<img src="https://github.com/user-attachments/assets/05a59ebe-68e4-4c91-925b-8857765ef12d" alt="Pictures" width="800" >  
 
 - Se connecter au domaine avec la commande:
 ```bash
 realm join --user=administrator/eur Nomdedomaine
 ```
+- Renseigner le mot de passe de l'Administrateur du serveur AD
+- Afficher le résumé avec la commande
+```bash
+realm list
+```
+<img src="https://github.com/user-attachments/assets/7201c038-fac5-4614-8adf-43a25b6e183c" alt="Pictures" width="800" > 
+
+---
+
 # 👉 Installation server GLPI
 
 ## Installation des prérequis
