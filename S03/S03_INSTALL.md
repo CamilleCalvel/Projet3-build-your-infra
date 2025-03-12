@@ -101,10 +101,8 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
    Si vous souhaitez lier le serveur GLPI à un nom de domaine :  
 
    ```bash
-   sudo mkdir /var/www/glpi.ekoloclast.local
+   sudo mkdir /var/www/glpi.monNomDeDomaine
    ```
-
-   Sinon, remplacez `glpi.NomDeDomaine` par un nom arbitraire.
 
 3. Extrayez et déplacez les fichiers téléchargés :
 
@@ -133,7 +131,7 @@ Suivez les étapes suivantes pour configurer MariaDB afin de préparer l'environ
 2. Ajoutez la configuration suivante **avant** la ligne `</VirtualHost>` :
    ```apache
    
-   DocumentRoot /var/www/glpi.nomdedomaine
+   DocumentRoot /var/www/glpi.monNomDeDomaine
 
    ```
 
