@@ -15,7 +15,7 @@ New-NetRoute -InterfaceIndex (Get-NetAdapter).IfIndex -DestinationPrefix "0.0.0.
 ![Capture d'écran 2024-12-08 150207](https://github.com/user-attachments/assets/7815f4cb-abb4-4f8d-a647-1e4ad2c34501)
 - Redemarrer la machine
 
-# Ajout au domaine Active Directory ekoloclast.local
+# Ajout au domaine Active Directory ekoloclast.local (facultatif)
 
 ![Capture d'écran 2024-12-08 150531](https://github.com/user-attachments/assets/581af956-1887-4ec6-a1d7-c8b64ad79a22)
 - Redemarrer la machine
