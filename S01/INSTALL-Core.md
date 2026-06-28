@@ -4,11 +4,13 @@
 
 ![Capture d'écran 2024-12-08 145238](https://github.com/user-attachments/assets/e4c193ef-cbd8-4d85-90a1-c5d202bd7148)
 
-## 2. Configuration DNS
+## 3. Configuration de la gateway 
+New-NetRoute -InterfaceIndex (Get-NetAdapter).IfIndex -DestinationPrefix "0.0.0.0/0" -NextHop "172.24.0.254"
+## 3. Configuration DNS
 ![Capture d'écran 2024-12-08 145245](https://github.com/user-attachments/assets/c53e8003-4c32-4922-9821-a46cc91f2c69)
 ![Capture d'écran 2024-12-08 145255](https://github.com/user-attachments/assets/cf10f072-55f9-41e2-9949-1578dd3d87c1)
 
-## 3. Configuration du nom du serveur en suivant la nomenclature
+## 4. Configuration du nom du serveur en suivant la nomenclature
 
 ![Capture d'écran 2024-12-08 150207](https://github.com/user-attachments/assets/7815f4cb-abb4-4f8d-a647-1e4ad2c34501)
 - Redemarrer la machine
